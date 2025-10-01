@@ -13,6 +13,10 @@
     "cta": "查看公寓",
     "contact": "联系我们"
   },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "为每位客人提供个性化服务，长期入住享有特殊优惠"
+  },
   "features": {
     "title": "为什么选择我们",
     "subtitle": "我们提供莫斯科最好的公寓租赁服务",
@@ -31,7 +35,21 @@
     "support": {
       "title": "24/7支持",
       "description": "随时准备帮助解决任何问题"
+    },
+    "security": {
+      "title": "安全保障",
+      "description": "完整的客人验证和财产保险"
+    },
+    "cleanliness": {
+      "title": "清洁舒适",
+      "description": "每位客人离开后专业清洁"
     }
+  },
+  "contact": {
+    "organizationName": "ИП Хорева Ксения Дмитриевна",
+    "phone": "电话",
+    "email": "电子邮件",
+    "workingHours": "每日营业时间：上午9:00至晚上9:00"
   },
   "featuredApartments": {
     "title": "精选公寓",

@@ -13,6 +13,10 @@
     "cta": "View Apartments",
     "contact": "Contact Us"
   },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Individual approach to each guest and special conditions for long-term stays"
+  },
   "features": {
     "title": "Why Choose Us",
     "subtitle": "We offer the best apartment rental service in Moscow",
@@ -31,7 +35,21 @@
     "support": {
       "title": "24/7 Support",
       "description": "Always ready to help with any questions"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Complete guest verification and property insurance"
+    },
+    "cleanliness": {
+      "title": "Cleanliness & Comfort",
+      "description": "Professional cleaning after each guest"
     }
+  },
+  "contact": {
+    "organizationName": "IP Khoreva Ksenia Dmitrievna",
+    "phone": "Phone",
+    "email": "Email",
+    "workingHours": "Open daily from 9:00 AM to 9:00 PM"
   },
   "featuredApartments": {
     "title": "Featured Apartments",

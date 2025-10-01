@@ -4,50 +4,56 @@ import Footer from '@/components/Footer';
 import ApartmentCard from '@/components/ApartmentCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Award, Shield, Star, TrendingUp } from 'lucide-react';
+import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 import heroImage from '@/assets/apartment-1.jpg';
-import apartment1 from '@/assets/apartment-1.jpg';
-import apartment2 from '@/assets/apartment-2.jpg';
-import apartment3 from '@/assets/apartment-3.jpg';
 import guestsChoiceAward from '@/assets/guests-choice-award.png';
 import superhostYandex from '@/assets/superhost-yandex-travel.png';
 import certificateSilver from '@/assets/certificate-silver-2024.jpg';
+import certificate202296 from '@/assets/certificate-2022-96.jpg';
+import certificate202297 from '@/assets/certificate-2022-97.jpg';
+import certificate202310 from '@/assets/certificate-2023-10.jpg';
+import certificate2023972 from '@/assets/certificate-2023-97-2.jpg';
+import certificate2023981 from '@/assets/certificate-2023-98-1.jpg';
+import certificate202399a from '@/assets/certificate-2023-99a.jpg';
+import certificate202399b from '@/assets/certificate-2023-99b.jpg';
+import certificate2024981 from '@/assets/certificate-2024-98-1.jpg';
+import certificate2024982 from '@/assets/certificate-2024-98-2.jpg';
+import certificate2024983 from '@/assets/certificate-2024-98-3.jpg';
+import certificate2024984 from '@/assets/certificate-2024-98-4.jpg';
+import certificate2024985 from '@/assets/certificate-2024-98-5.jpg';
+import certificate202499 from '@/assets/certificate-2024-99.jpg';
 
 const Index = () => {
   const { t } = useTranslation();
+  const [currentCertificate, setCurrentCertificate] = useState(0);
 
-  const featuredApartments = [
-    {
-      id: '1',
-      image: apartment1,
-      title: t('apartments.apt1.title'),
-      address: t('apartments.apt1.address'),
-      guests: 4,
-      rooms: 2,
-      price: '8 500 ₽',
-      badges: [t('badges.superhost')]
-    },
-    {
-      id: '2',
-      image: apartment2,
-      title: t('apartments.apt2.title'),
-      address: t('apartments.apt2.address'),
-      guests: 6,
-      rooms: 3,
-      price: '12 000 ₽',
-      badges: [t('badges.new')]
-    },
-    {
-      id: '3',
-      image: apartment3,
-      title: t('apartments.apt3.title'),
-      address: t('apartments.apt3.address'),
-      guests: 3,
-      rooms: 1,
-      price: '6 500 ₽',
-      badges: [t('badges.popular')]
-    }
+  const certificates = [
+    { image: guestsChoiceAward, title: t('awards.guestsChoice') },
+    { image: superhostYandex, title: t('awards.superhostYandex') },
+    { image: certificateSilver, title: t('awards.silverCertificate') },
+    { image: certificate202296, title: 'Сертификат 2022-96' },
+    { image: certificate202297, title: 'Сертификат 2022-97' },
+    { image: certificate202310, title: 'Сертификат 2023-10' },
+    { image: certificate2023972, title: 'Сертификат 2023-97-2' },
+    { image: certificate2023981, title: 'Сертификат 2023-98-1' },
+    { image: certificate202399a, title: 'Сертификат 2023-99a' },
+    { image: certificate202399b, title: 'Сертификат 2023-99b' },
+    { image: certificate2024981, title: 'Сертификат 2024-98-1' },
+    { image: certificate2024982, title: 'Сертификат 2024-98-2' },
+    { image: certificate2024983, title: 'Сертификат 2024-98-3' },
+    { image: certificate2024984, title: 'Сертификат 2024-98-4' },
+    { image: certificate2024985, title: 'Сертификат 2024-98-5' },
+    { image: certificate202499, title: 'Сертификат 2024-99' }
   ];
+
+  const nextCertificate = () => {
+    setCurrentCertificate((prev) => (prev + 1) % certificates.length);
+  };
+
+  const prevCertificate = () => {
+    setCurrentCertificate((prev) => (prev - 1 + certificates.length) % certificates.length);
+  };
 
   const features = [
     {
@@ -69,6 +75,16 @@ const Index = () => {
       icon: TrendingUp,
       title: t('features.support.title'),
       description: t('features.support.description')
+    },
+    {
+      icon: Shield,
+      title: t('features.security.title'),
+      description: t('features.security.description')
+    },
+    {
+      icon: Star,
+      title: t('features.cleanliness.title'),
+      description: t('features.cleanliness.description')
     }
   ];
 
@@ -109,6 +125,20 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Services Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t('services.title')}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+              {t('services.subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-gradient-warm">
         <div className="container mx-auto px-4">
@@ -121,7 +151,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -143,41 +173,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Apartments */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('featuredApartments.title')}
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t('featuredApartments.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredApartments.map((apartment, index) => (
-              <div
-                key={apartment.id}
-                className="animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <ApartmentCard {...apartment} />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/apartments">
-              <Button size="lg" variant="outline" className="px-8">
-                {t('featuredApartments.viewAll')}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Awards Section */}
+      {/* Awards Section with Carousel */}
       <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
@@ -189,27 +185,89 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-card hover:shadow-floating transition-all hover-scale">
-              <img src={guestsChoiceAward} alt="Guests' Choice Award" className="h-32 w-auto mb-4" />
-              <h3 className="font-heading text-lg font-semibold text-center text-foreground">
-                {t('awards.guestsChoice')}
+          <div className="relative max-w-2xl mx-auto">
+            <div className="flex flex-col items-center p-8 bg-background rounded-lg shadow-floating">
+              <img 
+                src={certificates[currentCertificate].image} 
+                alt={certificates[currentCertificate].title} 
+                className="h-64 w-auto mb-6 object-contain"
+              />
+              <h3 className="font-heading text-xl font-semibold text-center text-foreground mb-2">
+                {certificates[currentCertificate].title}
               </h3>
+              <p className="text-muted-foreground text-sm">
+                {currentCertificate + 1} / {certificates.length}
+              </p>
             </div>
 
-            <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-card hover:shadow-floating transition-all hover-scale">
-              <img src={superhostYandex} alt="Superhost Yandex Travel" className="h-32 w-auto mb-4" />
-              <h3 className="font-heading text-lg font-semibold text-center text-foreground">
-                {t('awards.superhostYandex')}
-              </h3>
-            </div>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-sm"
+              onClick={prevCertificate}
+            >
+              <ChevronLeft size={24} />
+            </Button>
 
-            <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-card hover:shadow-floating transition-all hover-scale">
-              <img src={certificateSilver} alt="Silver Certificate 2024" className="h-32 w-auto mb-4" />
-              <h3 className="font-heading text-lg font-semibold text-center text-foreground">
-                {t('awards.silverCertificate')}
-              </h3>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-sm"
+              onClick={nextCertificate}
+            >
+              <ChevronRight size={24} />
+            </Button>
+
+            <div className="flex justify-center gap-2 mt-6">
+              {certificates.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentCertificate(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentCertificate 
+                      ? 'bg-primary w-8' 
+                      : 'bg-muted-foreground/30'
+                  }`}
+                />
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 animate-fade-in">
+              {t('contact.organizationName')}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="p-6 bg-card rounded-lg shadow-card">
+                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
+                  {t('contact.phone')}
+                </h3>
+                <a href="tel:+79265475557" className="text-primary text-xl hover:underline">
+                  +7 (926) 547-55-57
+                </a>
+              </div>
+              <div className="p-6 bg-card rounded-lg shadow-card">
+                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
+                  {t('contact.email')}
+                </h3>
+                <a href="mailto:info@homereserve.ru" className="text-primary text-xl hover:underline">
+                  info@homereserve.ru
+                </a>
+              </div>
+            </div>
+            <p className="text-muted-foreground text-lg mb-8">
+              {t('contact.workingHours')}
+            </p>
+            <Link to="/contacts">
+              <Button size="lg" className="px-8 text-lg">
+                {t('cta.button')}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
