@@ -492,9 +492,9 @@ const Index = () => {
       </motion.section>
 
       {/* Key Benefits */}
-      <section className="py-16 animate-fade-in">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-12 animate-scale-in">
+          <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               {t('benefits.title')}
             </h2>
@@ -504,7 +504,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Shield className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -512,9 +518,15 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.honestPhotos.description')}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Clock className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -522,9 +534,15 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.support24.description')}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <MapPin className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -532,9 +550,15 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.bestLocations.description')}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Wifi className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -542,9 +566,15 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.highSpeedInternet.description')}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.5s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Monitor className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -552,9 +582,15 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.smartTv.description')}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <motion.div
+              className="text-center space-y-4 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Sparkles className="h-8 w-8 text-luxury-foreground" />
               </div>
@@ -562,7 +598,7 @@ const Index = () => {
               <p className="text-muted-foreground">
                 {t('benefits.perfectCleanliness.description')}
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
