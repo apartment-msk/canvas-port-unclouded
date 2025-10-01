@@ -1,17 +1,17 @@
 {
-  "nav": {
+  "navigation": {
     "home": "首页",
     "apartments": "公寓",
     "about": "关于我们",
-    "offers": "优惠",
+    "contacts": "联系方式",
     "owners": "房东专区",
-    "contacts": "联系方式"
+    "offers": "特别优惠"
   },
   "hero": {
-    "title": "莫斯科舒适公寓",
-    "subtitle": "为您的假期或商务旅行寻找完美的住宿。超过50套经过验证的房东公寓，评价优秀。",
-    "cta": "查看公寓",
-    "contact": "联系我们"
+    "title": "现代公寓",
+    "subtitle": "为您的舒适而设",
+    "description": "在我们精心挑选的公寓中发现舒适和风格的世界。真实照片，透明价格，24/7支持。",
+    "findApartments": "寻找公寓"
   },
   "services": {
     "title": "我们的服务",

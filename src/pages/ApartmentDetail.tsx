@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Navigation from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import ImageGallery from '@/components/ImageGallery';
 import BookingForm from '@/components/BookingForm';
@@ -56,7 +56,7 @@ const ApartmentDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Header />
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 animate-fade-in">

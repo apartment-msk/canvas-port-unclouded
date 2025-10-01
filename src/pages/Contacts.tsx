@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Navigation from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,7 +36,7 @@ const Contacts = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Header />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Navigation from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import ApartmentCard from '@/components/ApartmentCard';
 import apartment1 from '@/assets/apartment-1.jpg';
@@ -44,7 +44,7 @@ const Apartments = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Header />
 
       <div className="container mx-auto px-4 py-16">
         <div className="mb-12 animate-fade-in">

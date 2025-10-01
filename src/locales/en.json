@@ -1,17 +1,17 @@
 {
-  "nav": {
+  "navigation": {
     "home": "Home",
     "apartments": "Apartments",
     "about": "About",
-    "offers": "Offers",
+    "contacts": "Contacts",
     "owners": "For Owners",
-    "contacts": "Contacts"
+    "offers": "Special Offers"
   },
   "hero": {
-    "title": "Comfortable Apartments in Moscow",
-    "subtitle": "Find the perfect accommodation for your vacation or business trip. Over 50 apartments with verified hosts and excellent reviews.",
-    "cta": "View Apartments",
-    "contact": "Contact Us"
+    "title": "Modern Apartments",
+    "subtitle": "for your comfort",
+    "description": "Discover a world of comfort and style in our carefully selected apartments. Honest photos, transparent prices, 24/7 support.",
+    "findApartments": "Find Apartments"
   },
   "services": {
     "title": "Our Services",

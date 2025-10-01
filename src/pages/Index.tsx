@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import Navigation from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
-import ApartmentCard from '@/components/ApartmentCard';
+import { SearchWidget } from '@/components/SearchWidget';
+import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from '@/components/StructuredData';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight, Phone, MessageCircle, Sparkles } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import heroImage from '@/assets/apartment-1.jpg';
 import guestsChoiceAward from '@/assets/guests-choice-award.png';
 import superhostYandex from '@/assets/superhost-yandex-travel.png';
@@ -90,40 +92,95 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <StructuredData data={generateOrganizationData()} />
+      <StructuredData data={generateWebSiteData()} />
+      <StructuredData data={generateLocalBusinessData()} />
+      <Header />
 
-      {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
+      {/* Hero Section with Booking */}
+      <motion.section
+        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl animate-fade-in">
-            <h1 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              {t('hero.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/apartments">
-                <Button size="lg" className="text-lg px-8 shadow-luxury">
-                  {t('hero.cta')}
-                </Button>
-              </Link>
-              <Link to="/contacts">
-                <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
-                  {t('hero.contact')}
-                </Button>
-              </Link>
-            </div>
+
+        <div className="relative z-10 container mx-auto px-4 pt-20">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div
+              className="text-white mb-12"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                {t('hero.title')}
+                <span className="block text-luxury">{t('hero.subtitle')}</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                {t('hero.description')}
+              </p>
+            </motion.div>
+
+            {/* Integrated Search Widget */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            >
+              <SearchWidget className="bg-transparent rounded-2xl p-8 max-w-4xl mx-auto" />
+            </motion.div>
+
+            {/* Quick Contact Section */}
+            <motion.div
+              className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6 text-white"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+            >
+              <div className="flex items-center space-x-2">
+                <Phone className="h-5 w-5 text-luxury" />
+                <a
+                  href="tel:+79955085808"
+                  className="text-lg font-medium hover:text-luxury transition-colors"
+                >
+                  +7 995 508 58 08
+                </a>
+              </div>
+
+              <div className="hidden sm:block w-px h-8 bg-white/30"></div>
+
+              <div className="flex items-center space-x-4">
+                <a
+                  href="https://wa.me/79955085808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 hover:text-luxury transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5 text-green-400" />
+                  <span>WhatsApp</span>
+                </a>
+
+                <a
+                  href="https://t.me/Volshebno_tyt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 hover:text-luxury transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5 text-blue-400" />
+                  <span>Telegram</span>
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Services Section */}
       <section className="py-20 bg-background">
@@ -244,8 +301,8 @@ const Index = () => {
                 <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
                   {t('contact.phone')}
                 </h3>
-                <a href="tel:+79265475557" className="text-primary text-xl hover:underline">
-                  +7 (926) 547-55-57
+                <a href="tel:+79955085808" className="text-primary text-xl hover:underline">
+                  +7 995 508 58 08
                 </a>
               </div>
               <div className="p-6 bg-card rounded-lg shadow-card">

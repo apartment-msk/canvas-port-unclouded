@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Navigation from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -47,7 +47,7 @@ const Offers = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Header />
 
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16 animate-fade-in">
