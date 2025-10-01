@@ -1,92 +1,98 @@
-import { useTranslation } from 'react-i18next';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { SearchWidget } from '@/components/SearchWidget';
-import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from '@/components/StructuredData';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight, Phone, MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import heroImage from '@/assets/apartment-1.jpg';
-import guestsChoiceAward from '@/assets/guests-choice-award.png';
-import superhostYandex from '@/assets/superhost-yandex-travel.png';
-import certificateSilver from '@/assets/certificate-silver-2024.jpg';
-import certificate202296 from '@/assets/certificate-2022-96.jpg';
-import certificate202297 from '@/assets/certificate-2022-97.jpg';
-import certificate202310 from '@/assets/certificate-2023-10.jpg';
-import certificate2023972 from '@/assets/certificate-2023-97-2.jpg';
-import certificate2023981 from '@/assets/certificate-2023-98-1.jpg';
-import certificate202399a from '@/assets/certificate-2023-99a.jpg';
-import certificate202399b from '@/assets/certificate-2023-99b.jpg';
-import certificate2024981 from '@/assets/certificate-2024-98-1.jpg';
-import certificate2024982 from '@/assets/certificate-2024-98-2.jpg';
-import certificate2024983 from '@/assets/certificate-2024-98-3.jpg';
-import certificate2024984 from '@/assets/certificate-2024-98-4.jpg';
-import certificate2024985 from '@/assets/certificate-2024-98-5.jpg';
-import certificate202499 from '@/assets/certificate-2024-99.jpg';
+import { Link } from "react-router-dom";
+import { ArrowRight, Shield, Clock, Star, MapPin, Users, Award, Trophy, Wifi, Monitor, Sparkles, X, Phone, MessageCircle } from "lucide-react";
+import guestsChoiceAward from "@/assets/guests-choice-award.png";
+import superhostCertificate from "@/assets/superhost-yandex-travel.png";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { SearchWidget } from "@/components/SearchWidget";
+import { ReviewsCarousel } from "@/components/ReviewsCarousel";
+import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from "@/components/StructuredData";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import heroImage from "@/assets/apartment-1.jpg";
+import apartment1 from "@/assets/apartment-1.jpg";
+import apartment2 from "@/assets/apartment-2.jpg";
+import apartment3 from "@/assets/apartment-3.jpg";
+import certificate202297 from "@/assets/certificate-2022-97.jpg";
+import certificate202296 from "@/assets/certificate-2022-96.jpg";
+import certificate202310 from "@/assets/certificate-2023-10.jpg";
+import certificate202399a from "@/assets/certificate-2023-99a.jpg";
+import certificate202399b from "@/assets/certificate-2023-99b.jpg";
+import certificate202398_1 from "@/assets/certificate-2023-98-1.jpg";
+import certificate202397_2 from "@/assets/certificate-2023-97-2.jpg";
+import certificate202498_1 from "@/assets/certificate-2024-98-1.jpg";
+import certificate202498_2 from "@/assets/certificate-2024-98-2.jpg";
+import certificate202498_3 from "@/assets/certificate-2024-98-3.jpg";
+import certificate202499 from "@/assets/certificate-2024-99.jpg";
+import certificate202498_4 from "@/assets/certificate-2024-98-4.jpg";
+import certificate202498_5 from "@/assets/certificate-2024-98-5.jpg";
+import certificateSilver2024 from "@/assets/certificate-silver-2024.jpg";
 
 const Index = () => {
   const { t } = useTranslation();
-  const [currentCertificate, setCurrentCertificate] = useState(0);
-
-  const certificates = [
-    { image: guestsChoiceAward, title: t('awards.guestsChoice') },
-    { image: superhostYandex, title: t('awards.superhostYandex') },
-    { image: certificateSilver, title: t('awards.silverCertificate') },
-    { image: certificate202296, title: 'Сертификат 2022-96' },
-    { image: certificate202297, title: 'Сертификат 2022-97' },
-    { image: certificate202310, title: 'Сертификат 2023-10' },
-    { image: certificate2023972, title: 'Сертификат 2023-97-2' },
-    { image: certificate2023981, title: 'Сертификат 2023-98-1' },
-    { image: certificate202399a, title: 'Сертификат 2023-99a' },
-    { image: certificate202399b, title: 'Сертификат 2023-99b' },
-    { image: certificate2024981, title: 'Сертификат 2024-98-1' },
-    { image: certificate2024982, title: 'Сертификат 2024-98-2' },
-    { image: certificate2024983, title: 'Сертификат 2024-98-3' },
-    { image: certificate2024984, title: 'Сертификат 2024-98-4' },
-    { image: certificate2024985, title: 'Сертификат 2024-98-5' },
-    { image: certificate202499, title: 'Сертификат 2024-99' }
+  const featuredApartments = [
+    {
+      id: "1",
+      title: "Роскошные апартаменты в центре",
+      image: apartment1,
+      price: 8500,
+      location: "Тверская, 15",
+      guests: 4,
+      rating: 4.9,
+      amenities: ["WiFi", "Парковка", "Кофе"],
+      description: "Элегантные апартаменты с панорамным видом на город в самом сердце Москвы."
+    },
+    {
+      id: "2",
+      title: "Современная студия с кухней",
+      image: apartment2,
+      price: 5500,
+      location: "Арбат, 8",
+      guests: 2,
+      rating: 4.8,
+      amenities: ["WiFi", "Кофе"],
+      description: "Уютная студия с полностью оборудованной кухней и стильным интерьером."
+    },
+    {
+      id: "3",
+      title: "Просторная квартира для семьи",
+      image: apartment3,
+      price: 12000,
+      location: "Патриаршие пруды, 3",
+      guests: 6,
+      rating: 5.0,
+      amenities: ["WiFi", "Парковка", "Кофе"],
+      description: "Просторная трехкомнатная квартира идеально подходит для семейного отдыха."
+    }
   ];
 
-  const nextCertificate = () => {
-    setCurrentCertificate((prev) => (prev + 1) % certificates.length);
-  };
-
-  const prevCertificate = () => {
-    setCurrentCertificate((prev) => (prev - 1 + certificates.length) % certificates.length);
-  };
-
-  const features = [
+  const reviews = [
     {
-      icon: Shield,
-      title: t('features.verified.title'),
-      description: t('features.verified.description')
+      name: "Анна Петрова",
+      rating: 5,
+      comment: "Потрясающие апартаменты! Все было именно как на фотографиях. Чистота, комфорт и отличное расположение. Обязательно вернемся!",
+      date: "2 недели назад"
     },
     {
-      icon: Star,
-      title: t('features.quality.title'),
-      description: t('features.quality.description')
+      name: "Михаил С.",
+      rating: 5,
+      comment: "Отличный сервис и внимание к деталям. Поддержка 24/7 действительно работает - помогли решить небольшой вопрос в течение 10 минут.",
+      date: "1 месяц назад"
     },
     {
-      icon: Award,
-      title: t('features.awards.title'),
-      description: t('features.awards.description')
+      name: "Elena K.",
+      rating: 4,
+      comment: "Wonderful experience! The apartment was clean, modern and in a great location. Host was very responsive and helpful.",
+      date: "3 недели назад"
     },
     {
-      icon: TrendingUp,
-      title: t('features.support.title'),
-      description: t('features.support.description')
-    },
-    {
-      icon: Shield,
-      title: t('features.security.title'),
-      description: t('features.security.description')
-    },
-    {
-      icon: Star,
-      title: t('features.cleanliness.title'),
-      description: t('features.cleanliness.description')
+      name: "李明 (Li Ming)",
+      rating: 5,
+      comment: "非常棒的公寓！位置极佳，装修现代，设施齐全。房东非常友善，服务周到。强烈推荐给来莫斯科的朋友们！",
+      date: "1周前"
     }
   ];
 
@@ -111,7 +117,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 pt-20">
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               className="text-white mb-12"
@@ -182,6 +188,385 @@ const Index = () => {
         </div>
       </motion.section>
 
+      {/* Ratings & Awards Section */}
+      <motion.section
+        className="py-12 bg-gradient-to-r from-primary/5 to-luxury/5"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Наши достижения и рейтинги
+              </h2>
+              <p className="text-muted-foreground">
+                Мы гордимся доверием наших гостей и высокими оценками на ведущих платформах
+              </p>
+            </motion.div>
+
+            {/* Awards and Certificates Carousel */}
+            <motion.div
+              className="flex justify-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+              <Carousel className="w-full max-w-5xl">
+                <CarouselContent>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer hover-scale">
+                          <img
+                            src={certificateSilver2024}
+                            alt="Серебряный партнёр Суточно.ру 2024"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Серебряный партнёр Суточно.ру 2024</DialogTitle>
+                        <img
+                          src={certificateSilver2024}
+                          alt="Серебряный партнёр Суточно.ру 2024"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer hover-scale">
+                          <img
+                            src={guestsChoiceAward}
+                            alt="Guests' Choice Award 2024"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Guests' Choice Award 2024</DialogTitle>
+                        <img
+                          src={guestsChoiceAward}
+                          alt="Guests' Choice Award 2024"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer hover-scale">
+                          <img
+                            src={superhostCertificate}
+                            alt="Суперхозяин Яндекс Путешествия"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Суперхозяин Яндекс Путешествия</DialogTitle>
+                        <img
+                          src={superhostCertificate}
+                          alt="Суперхозяин Яндекс Путешествия"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202310}
+                            alt="Сертификат Суточно.ру 2023 - 10/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <img
+                          src={certificate202310}
+                          alt="Сертификат Суточно.ру 2023 - 10/10"
+                           className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202399a}
+                            alt="Сертификат Суточно.ру 2023 - 9.9/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <img
+                          src={certificate202399a}
+                          alt="Сертификат Суточно.ру 2023 - 9.9/10"
+                           className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202399b}
+                            alt="Сертификат Суточно.ру 2023 - 9.9/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <img
+                          src={certificate202399b}
+                          alt="Сертификат Суточно.ру 2023 - 9.9/10"
+                          className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202297}
+                            alt="Сертификат Суточно.ру 2022 - 9.7/10"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <img
+                          src={certificate202297}
+                          alt="Сертификат Суточно.ру 2022 - 9.7/10"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202296}
+                            alt="Сертификат Суточно.ру 2022 - 9.6/10"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl">
+                        <DialogTitle className="sr-only">Сертификат Суточно.ру 2022</DialogTitle>
+                        <img
+                          src={certificate202296}
+                          alt="Сертификат Суточно.ру 2022 - 9.6/10"
+                          className="w-full h-auto"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202398_1}
+                            alt="Сертификат Суточно.ру 2023 - 9.8/10"
+                            className="w-32 h-48 mx-auto rounded-lg object-cover"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl">
+                        <DialogTitle className="sr-only">Сертификат Суточно.ру 2023</DialogTitle>
+                        <img
+                          src={certificate202398_1}
+                          alt="Сертификат Суточно.ру 2023 - 9.8/10"
+                          className="w-full h-auto"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202499}
+                            alt="Сертификат Суточно.ру 2024 - 9.9/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Сертификат Суточно.ру 2024</DialogTitle>
+                        <img
+                          src={certificate202499}
+                          alt="Сертификат Суточно.ру 2024 - 9.9/10"
+                           className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202498_4}
+                            alt="Сертификат Суточно.ру 2024 - 9.8/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Сертификат Суточно.ру 2024</DialogTitle>
+                        <img
+                          src={certificate202498_4}
+                          alt="Сертификат Суточно.ру 2024 - 9.8/10"
+                           className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="bg-white rounded-xl p-4 text-center shadow-card hover:shadow-lg transition-all hover:scale-105 cursor-pointer">
+                          <img
+                            src={certificate202498_5}
+                            alt="Сертификат Суточно.ру 2024 - 9.8/10"
+                             className="w-32 h-48 mx-auto rounded-lg object-cover rotate-180"
+                          />
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl w-full">
+                        <DialogTitle className="sr-only">Сертификат Суточно.ру 2024</DialogTitle>
+                        <img
+                          src={certificate202498_5}
+                          alt="Сертификат Суточно.ру 2024 - 9.8/10"
+                           className="w-full h-auto rounded-lg rotate-180"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Key Benefits */}
+      <section className="py-16 animate-fade-in">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-4 mb-12 animate-scale-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              {t('benefits.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('benefits.description')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Shield className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.honestPhotos.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.honestPhotos.description')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Clock className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.support24.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.support24.description')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <MapPin className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.bestLocations.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.bestLocations.description')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Wifi className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.highSpeedInternet.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.highSpeedInternet.description')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.5s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Monitor className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.smartTv.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.smartTv.description')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 group animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Sparkles className="h-8 w-8 text-luxury-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{t('benefits.perfectCleanliness.title')}</h3>
+              <p className="text-muted-foreground">
+                {t('benefits.perfectCleanliness.description')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Services Section */}
       <motion.section
         className="py-20 bg-background"
@@ -198,68 +583,109 @@ const Index = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('services.title')}
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Наши услуги
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-              {t('services.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Features Section */}
-      <motion.section
-        className="py-20 bg-gradient-warm"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('features.title')}
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t('features.subtitle')}
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Индивидуальный подход к каждому гостю и специальные условия для долгосрочного проживания
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-6 rounded-lg bg-background shadow-card hover:shadow-floating transition-all duration-300 hover-scale"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-luxury mb-4">
-                  <feature.icon className="text-white" size={28} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Corporate Services */}
+            <motion.div
+              className="bg-gradient-to-br from-surface to-surface/50 rounded-3xl p-8 shadow-card hover:shadow-floating transition-all duration-300 border border-border/50"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="flex items-start space-x-6">
+                <div className="w-20 h-20 bg-gradient-luxury rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Users className="h-10 w-10 text-luxury-foreground" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold mb-2 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    Командировки и корпоративное размещение
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                    Работаем с командировочными и корпоративными клиентами.
+                    Предоставляем все необходимые документы для отчетности,
+                    индивидуальные условия оплаты и персональный менеджер для постоянных клиентов.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Отчетные документы</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Персональный менеджер</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Гибкие условия оплаты</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Корпоративные скидки</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Long-term Cleaning */}
+            <motion.div
+              className="bg-gradient-to-br from-surface to-surface/50 rounded-3xl p-8 shadow-card hover:shadow-floating transition-all duration-300 border border-border/50"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="flex items-start space-x-6">
+                <div className="w-20 h-20 bg-gradient-luxury rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="h-10 w-10 text-luxury-foreground" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    Бесплатная уборка при долгосрочном проживании
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                    При бронировании от 7 суток предоставляем бесплатную уборку.
+                    Регулярная смена белья и поддержание чистоты в апартаментах
+                    для вашего максимального комфорта.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Еженедельная уборка</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Смена белья</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Пополнение принадлежностей</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-luxury rounded-full"></div>
+                      <span className="text-sm text-muted-foreground">Гибкий график</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Awards Section with Carousel */}
+      {/* Reviews */}
       <motion.section
-        className="py-20 bg-surface"
+        className="py-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
@@ -267,144 +693,27 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <motion.div
-            className="text-center mb-16"
+            className="text-center space-y-4 mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('awards.title')}
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              {t('reviews.title')}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t('awards.subtitle')}
+            <p className="text-lg text-muted-foreground">
+              {t('reviews.description')}
             </p>
           </motion.div>
 
-          <div className="relative max-w-2xl mx-auto">
-            <div className="flex flex-col items-center p-8 bg-background rounded-lg shadow-floating">
-              <img 
-                src={certificates[currentCertificate].image} 
-                alt={certificates[currentCertificate].title} 
-                className="h-64 w-auto mb-6 object-contain"
-              />
-              <h3 className="font-heading text-xl font-semibold text-center text-foreground mb-2">
-                {certificates[currentCertificate].title}
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                {currentCertificate + 1} / {certificates.length}
-              </p>
-            </div>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-sm"
-              onClick={prevCertificate}
-            >
-              <ChevronLeft size={24} />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/95 backdrop-blur-sm"
-              onClick={nextCertificate}
-            >
-              <ChevronRight size={24} />
-            </Button>
-
-            <div className="flex justify-center gap-2 mt-6">
-              {certificates.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentCertificate(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentCertificate 
-                      ? 'bg-primary w-8' 
-                      : 'bg-muted-foreground/30'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Contact Info Section */}
-      <motion.section
-        className="py-20 bg-background"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4">
           <motion.div
-            className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <div className="p-6 bg-card rounded-lg shadow-card">
-                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
-                  {t('contact.phone')}
-                </h3>
-                <a href="tel:+79955085808" className="text-primary text-xl hover:underline">
-                  +7 995 508 58 08
-                </a>
-              </div>
-              <div className="p-6 bg-card rounded-lg shadow-card">
-                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
-                  {t('contact.email')}
-                </h3>
-                <a href="mailto:info@homereserve.ru" className="text-primary text-xl hover:underline">
-                  info@homereserve.ru
-                </a>
-              </div>
-            </div>
-            <p className="text-muted-foreground text-lg mb-8">
-              {t('contact.workingHours')}
-            </p>
-            <Link to="/contacts">
-              <Button size="lg" className="px-8 text-lg">
-                {t('cta.button')}
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section
-        className="py-20 bg-gradient-luxury"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('cta.title')}
-            </h2>
-            <p className="text-white/90 text-lg mb-8">
-              {t('cta.subtitle')}
-            </p>
-            <Link to="/contacts">
-              <Button size="lg" variant="secondary" className="px-8 text-lg shadow-floating">
-                {t('cta.button')}
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </Link>
+            <ReviewsCarousel reviews={reviews} />
           </motion.div>
         </div>
       </motion.section>
