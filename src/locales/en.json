@@ -91,6 +91,110 @@
     "successTitle": "Request Sent!",
     "successMessage": "We will contact you shortly."
   },
+  "details": {
+    "about": "About",
+    "bathrooms": "bathrooms",
+    "description": "Modern apartment with excellent renovation and all amenities. Perfect for comfortable living.",
+    "amenities": "Amenities"
+  },
+  "amenities": {
+    "wifi": "Wi-Fi",
+    "kitchen": "Kitchen",
+    "tv": "TV",
+    "washer": "Washing Machine",
+    "parking": "Parking",
+    "ac": "Air Conditioning"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Home Reserve Rentals is the leading apartment rental company in Moscow",
+    "stats": {
+      "guests": "Guests",
+      "apartments": "Apartments",
+      "rating": "Rating",
+      "awards": "Awards"
+    },
+    "paragraph1": "Home Reserve Rentals is a leading apartment rental company in Moscow. We offer a wide selection of comfortable accommodation for short-term and long-term rentals.",
+    "paragraph2": "Our mission is to provide our guests with quality and safe housing where they will feel at home. We carefully check every apartment and work only with reliable hosts.",
+    "paragraph3": "Over the years, we have earned the trust of thousands of clients and received many awards from leading booking platforms.",
+    "award1Description": "Award for outstanding service quality",
+    "award2Description": "Recognition of the best hosts on the platform"
+  },
+  "contacts": {
+    "subtitle": "Contact us in a convenient way",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Working Hours",
+    "hoursContent": "Mon-Sun: 9:00 AM - 9:00 PM",
+    "formTitle": "Have Questions?",
+    "formDescription": "Call us or email us, and we will be happy to answer all your questions!"
+  },
+  "offers": {
+    "subtitle": "Special offers and discounts on apartment rentals",
+    "popular": "Popular",
+    "seasonal": "Seasonal",
+    "new": "New",
+    "limited": "Limited",
+    "discount": "discount",
+    "viewApartments": "View Apartments",
+    "ctaTitle": "Didn't find a suitable offer?",
+    "ctaSubtitle": "Contact us and we will find the best option especially for you",
+    "longStay": {
+      "title": "Long-term Rental",
+      "description": "Discount for rentals of 30 days or more"
+    },
+    "earlyBooking": {
+      "title": "Early Booking",
+      "description": "Book 2 weeks in advance and get a discount"
+    },
+    "groupBooking": {
+      "title": "Group Booking",
+      "description": "Rent multiple apartments at once"
+    },
+    "firstBooking": {
+      "title": "First Booking",
+      "description": "Special discount for new clients"
+    }
+  },
+  "owners": {
+    "title": "For Owners",
+    "subtitle": "Rent out your apartment with us and get stable income",
+    "benefits": {
+      "income": {
+        "title": "High Income",
+        "description": "We guarantee maximum occupancy and competitive prices for your property"
+      },
+      "protection": {
+        "title": "Property Protection",
+        "description": "Complete guest verification and damage insurance"
+      },
+      "guests": {
+        "title": "Verified Guests",
+        "description": "We work only with reliable clients with positive reviews"
+      },
+      "support": {
+        "title": "Full Support",
+        "description": "We take care of all management and maintenance issues"
+      }
+    },
+    "ctaTitle": "Start earning today",
+    "ctaSubtitle": "Submit a request and we will contact you to discuss details",
+    "ctaButton": "Submit Request",
+    "howItWorks": "How It Works",
+    "step1": {
+      "title": "Application",
+      "description": "Submit an application through the form or call us"
+    },
+    "step2": {
+      "title": "Assessment",
+      "description": "We evaluate your apartment and discuss terms"
+    },
+    "step3": {
+      "title": "Start Working",
+      "description": "We post the listing and start accepting guests"
+    }
+  },
   "footer": {
     "company": "Home Reserve Rentals",
     "description": "Professional apartment rental in Moscow. Comfort, safety and the best service for our guests.",
@@ -98,5 +202,10 @@
     "contact": "Contact",
     "address": "Moscow, Russia",
     "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
   }
 }

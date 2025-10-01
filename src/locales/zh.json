@@ -91,6 +91,110 @@
     "successTitle": "请求已发送！",
     "successMessage": "我们会尽快与您联系。"
   },
+  "details": {
+    "about": "关于",
+    "bathrooms": "浴室",
+    "description": "现代化公寓，装修精美，设施齐全。非常适合舒适生活。",
+    "amenities": "设施"
+  },
+  "amenities": {
+    "wifi": "Wi-Fi",
+    "kitchen": "厨房",
+    "tv": "电视",
+    "washer": "洗衣机",
+    "parking": "停车场",
+    "ac": "空调"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "Home Reserve Rentals是莫斯科领先的公寓租赁公司",
+    "stats": {
+      "guests": "位客人",
+      "apartments": "套公寓",
+      "rating": "评分",
+      "awards": "个奖项"
+    },
+    "paragraph1": "Home Reserve Rentals是莫斯科领先的公寓租赁公司。我们提供广泛的舒适住宿选择，适合短期和长期租赁。",
+    "paragraph2": "我们的使命是为客人提供优质安全的住房，让他们有宾至如归的感觉。我们仔细检查每套公寓，只与可靠的房东合作。",
+    "paragraph3": "多年来，我们赢得了数千名客户的信任，并获得了领先预订平台的众多奖项。",
+    "award1Description": "卓越服务质量奖",
+    "award2Description": "平台最佳房东认可"
+  },
+  "contacts": {
+    "subtitle": "以方便的方式联系我们",
+    "phone": "电话",
+    "email": "电子邮件",
+    "address": "地址",
+    "hours": "营业时间",
+    "hoursContent": "周一至周日：上午9:00 - 晚上9:00",
+    "formTitle": "有问题吗？",
+    "formDescription": "给我们打电话或发电子邮件，我们很乐意回答您的所有问题！"
+  },
+  "offers": {
+    "subtitle": "公寓租赁特别优惠和折扣",
+    "popular": "热门",
+    "seasonal": "季节性",
+    "new": "新",
+    "limited": "限时",
+    "discount": "折扣",
+    "viewApartments": "查看公寓",
+    "ctaTitle": "没有找到合适的优惠？",
+    "ctaSubtitle": "联系我们，我们将为您找到最佳选择",
+    "longStay": {
+      "title": "长期租赁",
+      "description": "租赁30天或更长时间可享受折扣"
+    },
+    "earlyBooking": {
+      "title": "提前预订",
+      "description": "提前2周预订可享受折扣"
+    },
+    "groupBooking": {
+      "title": "团体预订",
+      "description": "同时租赁多套公寓"
+    },
+    "firstBooking": {
+      "title": "首次预订",
+      "description": "新客户特别折扣"
+    }
+  },
+  "owners": {
+    "title": "房东专区",
+    "subtitle": "与我们一起出租您的公寓，获得稳定收入",
+    "benefits": {
+      "income": {
+        "title": "高收入",
+        "description": "我们保证您的房产获得最高入住率和有竞争力的价格"
+      },
+      "protection": {
+        "title": "财产保护",
+        "description": "完整的客人验证和损坏保险"
+      },
+      "guests": {
+        "title": "经过验证的客人",
+        "description": "我们只与有正面评价的可靠客户合作"
+      },
+      "support": {
+        "title": "全面支持",
+        "description": "我们负责所有管理和维护问题"
+      }
+    },
+    "ctaTitle": "今天就开始赚钱",
+    "ctaSubtitle": "提交请求，我们会与您联系讨论详情",
+    "ctaButton": "提交请求",
+    "howItWorks": "如何运作",
+    "step1": {
+      "title": "申请",
+      "description": "通过表单提交申请或致电我们"
+    },
+    "step2": {
+      "title": "评估",
+      "description": "我们评估您的公寓并讨论条款"
+    },
+    "step3": {
+      "title": "开始工作",
+      "description": "我们发布房源并开始接待客人"
+    }
+  },
   "footer": {
     "company": "Home Reserve Rentals",
     "description": "莫斯科专业公寓租赁。为我们的客人提供舒适、安全和最好的服务。",
@@ -98,5 +202,10 @@
     "contact": "联系方式",
     "address": "莫斯科，俄罗斯",
     "rights": "版权所有。"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您要查找的页面不存在或已被移动。",
+    "backHome": "返回首页"
   }
 }
