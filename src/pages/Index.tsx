@@ -239,9 +239,6 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 animate-fade-in">
-              {t('contact.organizationName')}
-            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="p-6 bg-card rounded-lg shadow-card">
                 <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
