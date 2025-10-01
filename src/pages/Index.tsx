@@ -5,7 +5,7 @@ import { SearchWidget } from '@/components/SearchWidget';
 import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from '@/components/StructuredData';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight, Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Award, Shield, Star, TrendingUp, ChevronLeft, ChevronRight, Phone, MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/apartment-1.jpg';
@@ -183,37 +183,64 @@ const Index = () => {
       </motion.section>
 
       {/* Our Services Section */}
-      <section className="py-20 bg-background">
+      <motion.section
+        className="py-20 bg-background"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('services.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
               {t('services.subtitle')}
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-warm">
+      <motion.section
+        className="py-20 bg-gradient-warm"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('features.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               {t('features.subtitle')}
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="text-center p-6 rounded-lg bg-background shadow-card hover:shadow-floating transition-all duration-300 hover-scale animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="text-center p-6 rounded-lg bg-background shadow-card hover:shadow-floating transition-all duration-300 hover-scale"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-luxury mb-4">
                   <feature.icon className="text-white" size={28} />
@@ -224,23 +251,35 @@ const Index = () => {
                 <p className="text-muted-foreground text-sm">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Awards Section with Carousel */}
-      <section className="py-20 bg-surface">
+      <motion.section
+        className="py-20 bg-surface"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('awards.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               {t('awards.subtitle')}
             </p>
-          </div>
+          </motion.div>
 
           <div className="relative max-w-2xl mx-auto">
             <div className="flex flex-col items-center p-8 bg-background rounded-lg shadow-floating">
@@ -290,12 +329,24 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Info Section */}
-      <section className="py-20 bg-background">
+      <motion.section
+        className="py-20 bg-background"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="p-6 bg-card rounded-lg shadow-card">
                 <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
@@ -322,14 +373,26 @@ const Index = () => {
                 {t('cta.button')}
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-luxury">
+      <motion.section
+        className="py-20 bg-gradient-luxury"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-scale-in">
+          <motion.div
+            className="max-w-3xl mx-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
               {t('cta.title')}
             </h2>
@@ -339,11 +402,12 @@ const Index = () => {
             <Link to="/contacts">
               <Button size="lg" variant="secondary" className="px-8 text-lg shadow-floating">
                 {t('cta.button')}
+                <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
