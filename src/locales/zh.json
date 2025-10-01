@@ -1,3 +1,102 @@
 {
-  "welcome": "欢迎"
+  "nav": {
+    "home": "首页",
+    "apartments": "公寓",
+    "about": "关于我们",
+    "offers": "优惠",
+    "owners": "房东专区",
+    "contacts": "联系方式"
+  },
+  "hero": {
+    "title": "莫斯科舒适公寓",
+    "subtitle": "为您的假期或商务旅行寻找完美的住宿。超过50套经过验证的房东公寓，评价优秀。",
+    "cta": "查看公寓",
+    "contact": "联系我们"
+  },
+  "features": {
+    "title": "为什么选择我们",
+    "subtitle": "我们提供莫斯科最好的公寓租赁服务",
+    "verified": {
+      "title": "认证房东",
+      "description": "所有公寓均经过验证，拥有正面评价"
+    },
+    "quality": {
+      "title": "高品质",
+      "description": "仅提供现代装修的最佳公寓"
+    },
+    "awards": {
+      "title": "奖项和证书",
+      "description": "Airbnb和Yandex.Travel奖项获得者"
+    },
+    "support": {
+      "title": "24/7支持",
+      "description": "随时准备帮助解决任何问题"
+    }
+  },
+  "featuredApartments": {
+    "title": "精选公寓",
+    "subtitle": "来自我们合作伙伴的最佳优惠",
+    "viewAll": "查看所有公寓"
+  },
+  "apartments": {
+    "apt1": {
+      "title": "地铁附近的舒适公寓",
+      "address": "莫斯科，特维尔大街15号"
+    },
+    "apt2": {
+      "title": "宽敞的公寓",
+      "address": "莫斯科，库图佐夫大街24号"
+    },
+    "apt3": {
+      "title": "市中心工作室",
+      "address": "莫斯科，阿尔巴特街10号"
+    }
+  },
+  "apartment": {
+    "guests": "位客人",
+    "rooms": "间房",
+    "night": "晚",
+    "viewDetails": "查看详情"
+  },
+  "badges": {
+    "superhost": "超级房东",
+    "new": "新上线",
+    "popular": "热门"
+  },
+  "awards": {
+    "title": "我们的奖项",
+    "subtitle": "领先平台对我们服务质量的认可",
+    "guestsChoice": "2024年客人选择奖",
+    "superhostYandex": "Yandex.Travel超级房东",
+    "silverCertificate": "2024年银质证书"
+  },
+  "cta": {
+    "title": "准备预订了吗？",
+    "subtitle": "立即联系我们，获取特别优惠",
+    "button": "联系我们"
+  },
+  "booking": {
+    "title": "立即预订",
+    "name": "姓名",
+    "namePlaceholder": "您的姓名",
+    "email": "电子邮件",
+    "emailPlaceholder": "your@email.com",
+    "phone": "电话",
+    "checkIn": "入住",
+    "checkOut": "退房",
+    "guests": "客人",
+    "message": "留言",
+    "messagePlaceholder": "其他要求...",
+    "submit": "发送请求",
+    "successTitle": "请求已发送！",
+    "successMessage": "我们会尽快与您联系。"
+  },
+  "footer": {
+    "company": "Home Reserve Rentals",
+    "description": "莫斯科专业公寓租赁。为我们的客人提供舒适、安全和最好的服务。",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "address": "莫斯科，俄罗斯",
+    "rights": "版权所有。"
+  }
 }

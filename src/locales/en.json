@@ -1,3 +1,102 @@
 {
-  "welcome": "Welcome"
+  "nav": {
+    "home": "Home",
+    "apartments": "Apartments",
+    "about": "About",
+    "offers": "Offers",
+    "owners": "For Owners",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Comfortable Apartments in Moscow",
+    "subtitle": "Find the perfect accommodation for your vacation or business trip. Over 50 apartments with verified hosts and excellent reviews.",
+    "cta": "View Apartments",
+    "contact": "Contact Us"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "subtitle": "We offer the best apartment rental service in Moscow",
+    "verified": {
+      "title": "Verified Hosts",
+      "description": "All apartments are verified and have positive reviews"
+    },
+    "quality": {
+      "title": "High Quality",
+      "description": "Only the best apartments with modern renovations"
+    },
+    "awards": {
+      "title": "Awards & Certificates",
+      "description": "Winners of Airbnb and Yandex.Travel awards"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Always ready to help with any questions"
+    }
+  },
+  "featuredApartments": {
+    "title": "Featured Apartments",
+    "subtitle": "Best offers from our partners",
+    "viewAll": "View All Apartments"
+  },
+  "apartments": {
+    "apt1": {
+      "title": "Cozy Apartment near Metro",
+      "address": "Moscow, Tverskaya St., 15"
+    },
+    "apt2": {
+      "title": "Spacious Apartments",
+      "address": "Moscow, Kutuzovsky Prospect, 24"
+    },
+    "apt3": {
+      "title": "Studio in the Center",
+      "address": "Moscow, Arbat, 10"
+    }
+  },
+  "apartment": {
+    "guests": "guests",
+    "rooms": "rooms",
+    "night": "night",
+    "viewDetails": "View Details"
+  },
+  "badges": {
+    "superhost": "Superhost",
+    "new": "New",
+    "popular": "Popular"
+  },
+  "awards": {
+    "title": "Our Awards",
+    "subtitle": "Recognition of our service quality by leading platforms",
+    "guestsChoice": "Guests' Choice 2024",
+    "superhostYandex": "Yandex.Travel Superhost",
+    "silverCertificate": "Silver Certificate 2024"
+  },
+  "cta": {
+    "title": "Ready to Book?",
+    "subtitle": "Contact us now and get a special offer",
+    "button": "Contact Us"
+  },
+  "booking": {
+    "title": "Book Now",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "guests": "Guests",
+    "message": "Message",
+    "messagePlaceholder": "Additional requests...",
+    "submit": "Send Request",
+    "successTitle": "Request Sent!",
+    "successMessage": "We will contact you shortly."
+  },
+  "footer": {
+    "company": "Home Reserve Rentals",
+    "description": "Professional apartment rental in Moscow. Comfort, safety and the best service for our guests.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address": "Moscow, Russia",
+    "rights": "All rights reserved."
+  }
 }
