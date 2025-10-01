@@ -45,6 +45,38 @@
       "description": "每位客人离开后专业清洁"
     }
   },
+  "benefits": {
+    "title": "我们的优势",
+    "description": "我们为您的住宿创造舒适的条件",
+    "honestPhotos": {
+      "title": "真实照片",
+      "description": "只有真实的公寓照片，没有编辑或滤镜"
+    },
+    "support24": {
+      "title": "24/7支持",
+      "description": "在您住宿的所有阶段提供全天候帮助和支持"
+    },
+    "bestLocations": {
+      "title": "最佳位置",
+      "description": "莫斯科市中心的公寓，交通便利"
+    },
+    "highSpeedInternet": {
+      "title": "高速互联网",
+      "description": "每套公寓都有速度高达100 Mbps的稳定Wi-Fi"
+    },
+    "smartTv": {
+      "title": "智能电视",
+      "description": "可访问流行流媒体服务的现代电视"
+    },
+    "perfectCleanliness": {
+      "title": "完美清洁",
+      "description": "每次入住前专业清洁和更换干净床单"
+    }
+  },
+  "reviews": {
+    "title": "客人评价",
+    "description": "已入住我们公寓的客人的真实体验"
+  },
   "contact": {
     "phone": "电话",
     "email": "电子邮件",

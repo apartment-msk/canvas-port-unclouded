@@ -45,6 +45,38 @@
       "description": "Professional cleaning after each guest"
     }
   },
+  "benefits": {
+    "title": "Our Benefits",
+    "description": "We create comfortable conditions for your stay",
+    "honestPhotos": {
+      "title": "Honest Photos",
+      "description": "Only real apartment photos without editing or filters"
+    },
+    "support24": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock assistance and support at all stages of your stay"
+    },
+    "bestLocations": {
+      "title": "Best Locations",
+      "description": "Apartments in the center of Moscow with excellent transport accessibility"
+    },
+    "highSpeedInternet": {
+      "title": "High-Speed Internet",
+      "description": "Stable Wi-Fi with speeds up to 100 Mbps in every apartment"
+    },
+    "smartTv": {
+      "title": "Smart TV",
+      "description": "Modern TVs with access to popular streaming services"
+    },
+    "perfectCleanliness": {
+      "title": "Perfect Cleanliness",
+      "description": "Professional cleaning and fresh linens before each check-in"
+    }
+  },
+  "reviews": {
+    "title": "Guest Reviews",
+    "description": "Real impressions from people who have already stayed in our apartments"
+  },
   "contact": {
     "phone": "Phone",
     "email": "Email",
