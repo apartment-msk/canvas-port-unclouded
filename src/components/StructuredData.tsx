@@ -1,18 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface StructuredDataProps {
   data: Record<string, any>;
 }
 
 export function StructuredData({ data }: StructuredDataProps) {
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(data);
+    scriptRef.current = script;
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (scriptRef.current && document.head.contains(scriptRef.current)) {
+        document.head.removeChild(scriptRef.current);
+      }
     };
   }, [data]);
 
