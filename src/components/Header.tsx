@@ -1,191 +1,138 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Home, Building2, Info, Phone, Users, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import logo from "@/assets/new-logo.png";
 
 export function Header() {
-  const { t, i18n } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const { t } = useTranslation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
-
-  const currentLanguage = i18n.language;
+  const navigation = [
+    { name: t('navigation.home'), href: "/", icon: Home },
+    { name: t('navigation.apartments'), href: "https://homereserve.ru/HYkUIAGFQD", icon: Building2, external: true },
+    { name: t('navigation.about'), href: "/about", icon: Info },
+    { name: t('navigation.contacts'), href: "/contacts", icon: Phone },
+    { name: t('navigation.owners'), href: "/owners", icon: Users },
+    { name: t('navigation.offers'), href: "/offers", icon: Gift },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Home Reserve" className="h-12 w-auto" />
+            <img
+              src={logo}
+              alt="Волшебно тут - Апартаменты Москвы"
+              className="h-16 w-auto"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-foreground">Волшебно тут</span>
+              <span className="text-sm text-muted-foreground">апартаменты Москвы</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.home')}
-            </Link>
-            <Link to="/apartments" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.apartments')}
-            </Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.about')}
-            </Link>
-            <Link to="/offers" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.offers')}
-            </Link>
-            <Link to="/owners" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.owners')}
-            </Link>
-            <Link to="/contacts" className="text-foreground hover:text-primary transition-colors">
-              {t('navigation.contacts')}
-            </Link>
-          </nav>
+          <div className="hidden md:flex items-center space-x-1">
+            {navigation.map((item) => {
+              const isActive = location.pathname === item.href && !item.external;
+              const IconComponent = item.icon;
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {/* Language Selector */}
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => changeLanguage('ru')}
-                className={`text-sm font-medium transition-colors ${
-                  currentLanguage === 'ru' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                RU
-              </button>
-              <span className="text-muted-foreground">|</span>
-              <button
-                onClick={() => changeLanguage('en')}
-                className={`text-sm font-medium transition-colors ${
-                  currentLanguage === 'en' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                EN
-              </button>
-              <span className="text-muted-foreground">|</span>
-              <button
-                onClick={() => changeLanguage('zh')}
-                className={`text-sm font-medium transition-colors ${
-                  currentLanguage === 'zh' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                中文
-              </button>
-            </div>
+              if (item.external) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-surface"
+                  >
+                    <IconComponent className="mr-2 h-4 w-4" />
+                    {item.name}
+                  </a>
+                );
+              }
 
-            <a href="tel:+79955085808" className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors">
-              <Phone className="h-4 w-4" />
-              <span className="text-sm font-medium">+7 995 508 58 08</span>
-            </a>
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                    isActive
+                      ? "bg-warm text-warm-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-surface"
+                  )}
+                >
+                  <IconComponent className="mr-2 h-4 w-4" />
+                  {item.name}
+                </Link>
+              );
+            })}
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border animate-fade-in">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                to="/"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.home')}
-              </Link>
-              <Link
-                to="/apartments"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.apartments')}
-              </Link>
-              <Link
-                to="/about"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.about')}
-              </Link>
-              <Link
-                to="/offers"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.offers')}
-              </Link>
-              <Link
-                to="/owners"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.owners')}
-              </Link>
-              <Link
-                to="/contacts"
-                className="text-foreground hover:text-primary transition-colors px-4 py-2"
-                onClick={toggleMenu}
-              >
-                {t('navigation.contacts')}
-              </Link>
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 border-t animate-slide-up">
+            <nav className="flex flex-col space-y-2">
+              {navigation.map((item) => {
+                const isActive = location.pathname === item.href && !item.external;
+                const IconComponent = item.icon;
 
-              <div className="flex items-center space-x-4 px-4 pt-4 border-t border-border mt-4">
-                <button
-                  onClick={() => {
-                    changeLanguage('ru');
-                    toggleMenu();
-                  }}
-                  className={`text-sm font-medium ${
-                    currentLanguage === 'ru' ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  RU
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage('en');
-                    toggleMenu();
-                  }}
-                  className={`text-sm font-medium ${
-                    currentLanguage === 'en' ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  EN
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage('zh');
-                    toggleMenu();
-                  }}
-                  className={`text-sm font-medium ${
-                    currentLanguage === 'zh' ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  中文
-                </button>
+                if (item.external) {
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:text-foreground hover:bg-surface"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <IconComponent className="mr-3 h-4 w-4" />
+                      {item.name}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={cn(
+                      "flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-warm text-warm-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-surface"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <IconComponent className="mr-3 h-4 w-4" />
+                    {item.name}
+                  </Link>
+                );
+              })}
+              <div className="px-4 py-2">
+                <LanguageSwitcher />
               </div>
-
-              <a
-                href="tel:+79955085808"
-                className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors px-4 pt-4"
-              >
-                <Phone className="h-4 w-4" />
-                <span className="text-sm font-medium">+7 995 508 58 08</span>
-              </a>
             </nav>
           </div>
         )}
