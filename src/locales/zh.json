@@ -148,30 +148,78 @@
     "formDescription": "给我们打电话或发电子邮件，我们很乐意回答您的所有问题！"
   },
   "offers": {
-    "subtitle": "公寓租赁特别优惠和折扣",
-    "popular": "热门",
-    "seasonal": "季节性",
-    "new": "新",
-    "limited": "限时",
-    "discount": "折扣",
-    "viewApartments": "查看公寓",
-    "ctaTitle": "没有找到合适的优惠？",
-    "ctaSubtitle": "联系我们，我们将为您找到最佳选择",
-    "longStay": {
-      "title": "长期租赁",
-      "description": "租赁30天或更长时间可享受折扣"
+    "hero": {
+      "title": "特别优惠",
+      "subtitle": "舒适住宿的优惠价格。长期入住享受更多优惠。"
     },
-    "earlyBooking": {
-      "title": "提前预订",
-      "description": "提前2周预订可享受折扣"
+    "current": {
+      "title": "当前优惠",
+      "subtitle": "为我们的客人提供的特殊条件"
     },
-    "groupBooking": {
-      "title": "团体预订",
-      "description": "同时租赁多套公寓"
+    "list": [
+      {
+        "title": "新客户折扣",
+        "discount": "5%",
+        "code": "Online5",
+        "description": "首次预订使用促销代码可享受5%折扣"
+      },
+      {
+        "title": "长期住宿 14天以上",
+        "discount": "10%",
+        "description": "预订14天或以上自动享受折扣"
+      },
+      {
+        "title": "每周住宿 7天以上",
+        "discount": "5%",
+        "description": "预订7天或以上自动享受折扣"
+      },
+      {
+        "title": "短期住宿 2天以上",
+        "discount": "3%",
+        "description": "预订2天或以上自动享受折扣"
+      }
+    ],
+    "labels": {
+      "promoCode": "促销代码：",
+      "enterWhenBooking": "预订时输入",
+      "appliedAutomatically": "✓ 自动应用"
     },
-    "firstBooking": {
-      "title": "首次预订",
-      "description": "新客户特别折扣"
+    "benefits": {
+      "title": "额外优惠",
+      "subtitle": "为我们的客人提供更多好处",
+      "list": [
+        {
+          "title": "最优价格保证",
+          "description": "如果您找到更便宜的类似优惠，我们将为您提供折扣"
+        },
+        {
+          "title": "老客户专属促销代码",
+          "description": "为我们的常客提供个性化折扣和特别优惠"
+        }
+      ]
+    },
+    "howToUse": {
+      "title": "如何使用优惠",
+      "subtitle": "获得折扣的简单步骤",
+      "steps": [
+        {
+          "title": "选择公寓",
+          "description": "找到合适的公寓和入住日期"
+        },
+        {
+          "title": "输入促销代码",
+          "description": "首次预订时输入代码\"Online5\"或自动获得折扣"
+        },
+        {
+          "title": "享受您的住宿",
+          "description": "节省费用并充分享受住宿体验"
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备预订了吗？",
+      "subtitle": "不要错过在舒适住宿上省钱的机会",
+      "button": "查看公寓"
     }
   },
   "owners": {

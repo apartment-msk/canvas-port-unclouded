@@ -148,30 +148,78 @@
     "formDescription": "Call us or email us, and we will be happy to answer all your questions!"
   },
   "offers": {
-    "subtitle": "Special offers and discounts on apartment rentals",
-    "popular": "Popular",
-    "seasonal": "Seasonal",
-    "new": "New",
-    "limited": "Limited",
-    "discount": "discount",
-    "viewApartments": "View Apartments",
-    "ctaTitle": "Didn't find a suitable offer?",
-    "ctaSubtitle": "Contact us and we will find the best option especially for you",
-    "longStay": {
-      "title": "Long-term Rental",
-      "description": "Discount for rentals of 30 days or more"
+    "hero": {
+      "title": "Special Offers",
+      "subtitle": "Great deals for comfortable stay. Save more with longer stays."
     },
-    "earlyBooking": {
-      "title": "Early Booking",
-      "description": "Book 2 weeks in advance and get a discount"
+    "current": {
+      "title": "Current Offers",
+      "subtitle": "Special conditions for our guests"
     },
-    "groupBooking": {
-      "title": "Group Booking",
-      "description": "Rent multiple apartments at once"
+    "list": [
+      {
+        "title": "New Guest Discount",
+        "discount": "5%",
+        "code": "Online5",
+        "description": "5% discount on first booking with promo code"
+      },
+      {
+        "title": "Long Stay 14+ Days",
+        "discount": "10%",
+        "description": "Automatic discount for bookings of 14 days or more"
+      },
+      {
+        "title": "Weekly Stay 7+ Days",
+        "discount": "5%",
+        "description": "Automatic discount for bookings of 7 days or more"
+      },
+      {
+        "title": "Short Stay 2+ Days",
+        "discount": "3%",
+        "description": "Automatic discount for bookings of 2 days or more"
+      }
+    ],
+    "labels": {
+      "promoCode": "Promo Code:",
+      "enterWhenBooking": "Enter when booking",
+      "appliedAutomatically": "✓ Applied automatically"
     },
-    "firstBooking": {
-      "title": "First Booking",
-      "description": "Special discount for new clients"
+    "benefits": {
+      "title": "Additional Benefits",
+      "subtitle": "Even more advantages for our guests",
+      "list": [
+        {
+          "title": "Best Price Guarantee",
+          "description": "If you find a similar offer cheaper, we will give you a discount"
+        },
+        {
+          "title": "Personal Promo Code for Regular Guests",
+          "description": "Personal discounts and special offers for our regular clients"
+        }
+      ]
+    },
+    "howToUse": {
+      "title": "How to Use the Offers",
+      "subtitle": "Simple steps to get a discount",
+      "steps": [
+        {
+          "title": "Choose Apartment",
+          "description": "Find suitable apartments and accommodation dates"
+        },
+        {
+          "title": "Enter Promo Code",
+          "description": "Enter code \"Online5\" for first booking or get automatic discount"
+        },
+        {
+          "title": "Enjoy Your Stay",
+          "description": "Save money and get maximum enjoyment from your stay"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Book?",
+      "subtitle": "Don't miss the opportunity to save on comfortable accommodation",
+      "button": "View Apartments"
     }
   },
   "owners": {

@@ -1,116 +1,192 @@
-import { useTranslation } from 'react-i18next';
-import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
-import { Percent, Calendar, Users, Gift } from 'lucide-react';
+import { Header } from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Gift, Calendar, Percent, Star, Clock, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Offers = () => {
   const { t } = useTranslation();
 
-  const offers = [
-    {
-      icon: Percent,
-      badge: t('offers.popular'),
-      title: t('offers.longStay.title'),
-      description: t('offers.longStay.description'),
-      discount: '15%',
-      color: 'bg-gradient-luxury'
-    },
-    {
-      icon: Calendar,
-      badge: t('offers.seasonal'),
-      title: t('offers.earlyBooking.title'),
-      description: t('offers.earlyBooking.description'),
-      discount: '10%',
-      color: 'bg-gradient-warm'
-    },
-    {
-      icon: Users,
-      badge: t('offers.new'),
-      title: t('offers.groupBooking.title'),
-      description: t('offers.groupBooking.description'),
-      discount: '20%',
-      color: 'bg-gradient-luxury'
-    },
-    {
-      icon: Gift,
-      badge: t('offers.limited'),
-      title: t('offers.firstBooking.title'),
-      description: t('offers.firstBooking.description'),
-      discount: '500₽',
-      color: 'bg-gradient-warm'
-    }
-  ];
+  const offerIcons = [Gift, Calendar, Clock, Heart];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {t('nav.offers')}
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t('offers.subtitle')}
-          </p>
+      {/* Hero Section */}
+      <section className="bg-gradient-hero py-20 pt-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground">
+              {t('offers.hero.title')}
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('offers.hero.subtitle')}
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {offers.map((offer, index) => (
-            <Card
-              key={index}
-              className="shadow-card hover:shadow-floating transition-all animate-slide-up hover-scale"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-full ${offer.color} flex items-center justify-center`}>
-                    <offer.icon className="text-white" size={24} />
+      {/* Main Offers */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                {t('offers.current.title')}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t('offers.current.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {(t('offers.list', { returnObjects: true }) as any[]).map((offer: any, index: number) => {
+                const IconComponent = offerIcons[index] || Gift;
+                const colors = [
+                  "bg-gradient-to-r from-green-500 to-emerald-600",
+                  "bg-gradient-to-r from-blue-500 to-blue-600",
+                  "bg-gradient-to-r from-purple-500 to-purple-600",
+                  "bg-gradient-to-r from-pink-500 to-rose-600"
+                ];
+
+                return (
+                  <Card key={index} className="border-0 shadow-card hover:shadow-floating transition-all duration-300 overflow-hidden">
+                    <div className={`h-2 ${colors[index]}`}></div>
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-12 h-12 bg-gradient-luxury rounded-xl flex items-center justify-center">
+                            <IconComponent className="h-6 w-6 text-luxury-foreground" />
+                          </div>
+                          <CardTitle className="text-xl">{offer.title}</CardTitle>
+                        </div>
+                        <Badge variant="secondary" className="text-2xl font-bold px-4 py-2">
+                          -{offer.discount}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        {offer.description}
+                      </p>
+                      {offer.code && (
+                        <div className="bg-surface p-4 rounded-lg">
+                          <p className="text-sm text-muted-foreground mb-2">{t('offers.labels.promoCode')}</p>
+                          <div className="flex items-center space-x-2">
+                            <code className="bg-gradient-luxury text-luxury-foreground px-3 py-1 rounded font-mono font-bold">
+                              {offer.code}
+                            </code>
+                            <span className="text-sm text-muted-foreground">
+                              {t('offers.labels.enterWhenBooking')}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                      {!offer.code && (
+                        <div className="bg-surface p-4 rounded-lg">
+                          <p className="text-sm font-medium text-green-600">
+                            {t('offers.labels.appliedAutomatically')}
+                          </p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Benefits */}
+      <section className="py-16 bg-surface">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                {t('offers.benefits.title')}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t('offers.benefits.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {(t('offers.benefits.list', { returnObjects: true }) as any[]).map((benefit: any, index: number) => (
+                <Card key={index} className="text-center border-0 shadow-card">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-luxury rounded-2xl flex items-center justify-center">
+                      {index === 0 ? <Star className="h-8 w-8 text-luxury-foreground" /> : <Gift className="h-8 w-8 text-luxury-foreground" />}
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {benefit.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Use */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                {t('offers.howToUse.title')}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t('offers.howToUse.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {(t('offers.howToUse.steps', { returnObjects: true }) as any[]).map((step: any, index: number) => (
+                <div key={index} className="text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-luxury rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-luxury-foreground">{index + 1}</span>
                   </div>
-                  <Badge variant="default">{offer.badge}</Badge>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
-                <CardTitle className="font-heading text-2xl text-foreground">
-                  {offer.title}
-                </CardTitle>
-                <CardDescription className="text-base">
-                  {offer.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-baseline space-x-2 mb-4">
-                  <span className="text-4xl font-bold text-primary">{offer.discount}</span>
-                  <span className="text-muted-foreground">{t('offers.discount')}</span>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Link to="/apartments" className="w-full">
-                  <Button className="w-full" size="lg">
-                    {t('offers.viewApartments')}
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="mt-16 text-center bg-gradient-luxury rounded-lg p-12 animate-scale-in">
-          <h2 className="font-heading text-3xl font-bold text-white mb-4">
-            {t('offers.ctaTitle')}
-          </h2>
-          <p className="text-white/90 text-lg mb-6">
-            {t('offers.ctaSubtitle')}
-          </p>
-          <Link to="/contacts">
-            <Button size="lg" variant="secondary" className="px-8">
-              {t('cta.button')}
-            </Button>
-          </Link>
+      {/* CTA */}
+      <section className="py-16 bg-gradient-hero">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              {t('offers.cta.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('offers.cta.subtitle')}
+            </p>
+
+            <Link to="/apartments">
+              <Button size="lg" className="bg-gradient-luxury text-luxury-foreground hover:shadow-luxury hover:scale-105">
+                {t('offers.cta.button')}
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
