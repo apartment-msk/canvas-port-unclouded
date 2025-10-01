@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/Footer';
 import { Award, Shield, Star, Users, Home } from 'lucide-react';
 import guestsChoiceAward from '@/assets/guests-choice-award.png';
 import superhostYandex from '@/assets/superhost-yandex-travel.png';

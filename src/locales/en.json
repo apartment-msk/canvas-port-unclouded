@@ -261,12 +261,9 @@
     }
   },
   "footer": {
-    "company": "Home Reserve Rentals",
-    "description": "Professional apartment rental in Moscow. Comfort, safety and the best service for our guests.",
     "quickLinks": "Quick Links",
-    "contact": "Contact",
-    "address": "Moscow, Russia",
-    "rights": "All rights reserved."
+    "contactInfo": "Contact Info",
+    "copyright": "All rights reserved"
   },
   "notFound": {
     "title": "Page Not Found",

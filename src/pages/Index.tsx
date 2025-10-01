@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/Footer';
 import { SearchWidget } from '@/components/SearchWidget';
 import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from '@/components/StructuredData';
 import { Button } from '@/components/ui/button';

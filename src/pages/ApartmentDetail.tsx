@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/Footer';
 import ImageGallery from '@/components/ImageGallery';
 import BookingForm from '@/components/BookingForm';
 import { MapPin, Users, Home, Wifi, Tv, Coffee, Bath, Wind, Car } from 'lucide-react';

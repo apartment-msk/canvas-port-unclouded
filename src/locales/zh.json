@@ -261,12 +261,9 @@
     }
   },
   "footer": {
-    "company": "Home Reserve Rentals",
-    "description": "莫斯科专业公寓租赁。为我们的客人提供舒适、安全和最好的服务。",
     "quickLinks": "快速链接",
-    "contact": "联系方式",
-    "address": "莫斯科，俄罗斯",
-    "rights": "版权所有。"
+    "contactInfo": "联系方式",
+    "copyright": "版权所有"
   },
   "notFound": {
     "title": "页面未找到",

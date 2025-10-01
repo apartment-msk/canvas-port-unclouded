@@ -1,78 +1,103 @@
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Building2, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import logo from "@/assets/new-logo.png";
 
-const Footer = () => {
+export function Footer() {
   const { t } = useTranslation();
-
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="bg-surface border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="font-heading text-xl font-semibold mb-4 text-foreground">
-              {t('footer.company')}
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {t('footer.description')}
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <img
+                src={logo}
+                alt="Волшебно тут - Апартаменты Москвы"
+                className="h-12 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="font-bold text-foreground">Волшебно тут</span>
+                <span className="text-xs text-muted-foreground">апартаменты Москвы</span>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Современные апартаменты Москвы
             </p>
           </div>
 
-          <div>
-            <h3 className="font-heading text-xl font-semibold mb-4 text-foreground">
-              {t('footer.quickLinks')}
-            </h3>
-            <ul className="space-y-2">
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-foreground">{t('footer.quickLinks')}</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/apartments" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t('nav.apartments')}
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('navigation.home')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t('nav.about')}
+                <Link to="/apartments" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('navigation.apartments')}
                 </Link>
               </li>
               <li>
-                <Link to="/offers" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t('nav.offers')}
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('navigation.about')}
                 </Link>
               </li>
               <li>
-                <Link to="/contacts" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t('nav.contacts')}
+                <Link to="/contacts" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('navigation.contacts')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-heading text-xl font-semibold mb-4 text-foreground">
-              {t('footer.contact')}
-            </h3>
-            <div className="space-y-3">
-              <a href="tel:+79265475557" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors text-sm">
-                <Phone size={16} />
-                <span>+7 (926) 547-55-57</span>
-              </a>
-              <a href="mailto:info@homereserve.ru" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors text-sm">
-                <Mail size={16} />
-                <span>info@homereserve.ru</span>
-              </a>
-              <div className="flex items-start space-x-2 text-muted-foreground text-sm">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>{t('footer.address')}</span>
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-foreground">{t('footer.contactInfo')}</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-luxury" />
+                <a href="tel:+79955085808" className="text-muted-foreground hover:text-luxury transition-colors">
+                  +7 995 508 58 08
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-luxury" />
+                <a href="mailto:info@volshebno-tut.ru" className="text-muted-foreground hover:text-luxury transition-colors">
+                  info@volshebno-tut.ru
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4 text-blue-400" />
+                <a href="https://t.me/Volshebno_tyt" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-luxury transition-colors">
+                  @Volshebno_tyt
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="h-4 w-4 text-green-400" />
+                <a
+                  href="https://wa.me/+79955085808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-luxury transition-colors"
+                  title="Открыть WhatsApp с номером +7 995 508 58 08"
+                >
+                  WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Home Reserve Rentals. {t('footer.rights')}</p>
+        <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
+          <p>&copy; 2025 Волшебно тут. {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

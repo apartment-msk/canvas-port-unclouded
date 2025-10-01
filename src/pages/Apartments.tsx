@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
+import { Footer } from '@/components/Footer';
 import ApartmentCard from '@/components/ApartmentCard';
 import apartment1 from '@/assets/apartment-1.jpg';
 import apartment2 from '@/assets/apartment-2.jpg';
