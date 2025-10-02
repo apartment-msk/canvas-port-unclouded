@@ -1,0 +1,2 @@
+# This file ensures the .well-known directory is tracked by Git
+# Used for various verification files (Google Search Console, Apple App Site Association, etc.)

@@ -1,0 +1,2 @@
+# This file ensures the directory is tracked by Git and deployed to TimeWeb
+# TimeWeb will use this directory to serve ACME challenge files for SSL certificate validation
