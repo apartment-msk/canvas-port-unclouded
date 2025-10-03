@@ -36,14 +36,14 @@ const About = () => {
   }];
   return <div className="min-h-screen bg-background">
       <SEO
-        title="О нас - Компания по аренде премиальных апартаментов"
-        description="Home Reserve Rentals - команда профессионалов с 2020 года. Более 2500 довольных гостей, рейтинг 4.9/5. Честность, качество и забота о каждом госте."
+        title={t('about.seo.title')}
+        description={t('about.seo.description')}
         keywords="о компании, аренда апартаментов москва, история компании, честная аренда жилья"
         type="article"
         structuredData={[
           generateArticleData({
-            title: "О компании Home Reserve Rentals",
-            description: "История создания сервиса премиальной аренды апартаментов в Москве",
+            title: t('about.seo.title'),
+            description: t('about.seo.description'),
             datePublished: "2020-01-01",
             dateModified: "2025-10-03",
             image: "https://homereserve.ru/about-image.jpg"

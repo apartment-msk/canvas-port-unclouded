@@ -157,6 +157,10 @@
   "about": {
     "title": "关于我们",
     "description": "我们通过将现代公寓的舒适与个性化服务和诚实的商业方式相结合，创造难忘的居住体验。",
+    "seo": {
+      "title": "关于我们 - Volshebno Tut",
+      "description": "Volshebno Tut - 自2020年以来的专业团队。超过2500位满意的客人，评分4.9/5。诚实、质量和对每位客人的关怀。"
+    },
     "achievements": {
       "title": "我们的成就和评分",
       "subtitle": "这些数字说明了我们的经验和服务质量"

@@ -157,6 +157,10 @@
   "about": {
     "title": "About us",
     "description": "We create unforgettable living experiences by combining the comfort of modern apartments with personal service and an honest approach to business.",
+    "seo": {
+      "title": "About us - Volshebno Tut",
+      "description": "Volshebno Tut - a team of professionals since 2020. Over 2500 satisfied guests, rating 4.9/5. Honesty, quality and care for every guest."
+    },
     "achievements": {
       "title": "Our achievements and ratings",
       "subtitle": "Numbers that speak about our experience and service quality"
