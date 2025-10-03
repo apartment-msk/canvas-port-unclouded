@@ -12,7 +12,7 @@ import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from "@/components/StructuredData";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/apartment-1.jpg";
+import heroImage from "@/assets/hero-new-2.avifs";
 import apartment1 from "@/assets/apartment-1.jpg";
 import apartment2 from "@/assets/apartment-2.jpg";
 import apartment3 from "@/assets/apartment-3.jpg";
