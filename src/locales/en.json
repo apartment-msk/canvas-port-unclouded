@@ -155,19 +155,56 @@
     "ac": "Air Conditioning"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Home Reserve Rentals is the leading apartment rental company in Moscow",
-    "stats": {
-      "guests": "Guests",
-      "apartments": "Apartments",
-      "rating": "Rating",
-      "awards": "Awards"
+    "title": "About us",
+    "description": "We create unforgettable living experiences by combining the comfort of modern apartments with personal service and an honest approach to business.",
+    "achievements": {
+      "title": "Our achievements and ratings",
+      "subtitle": "Numbers that speak about our experience and service quality"
     },
-    "paragraph1": "Home Reserve Rentals is a leading apartment rental company in Moscow. We offer a wide selection of comfortable accommodation for short-term and long-term rentals.",
-    "paragraph2": "Our mission is to provide our guests with quality and safe housing where they will feel at home. We carefully check every apartment and work only with reliable hosts.",
-    "paragraph3": "Over the years, we have earned the trust of thousands of clients and received many awards from leading booking platforms.",
-    "award1Description": "Award for outstanding service quality",
-    "award2Description": "Recognition of the best hosts on the platform"
+    "stats": {
+      "guests": "Happy guests",
+      "rating": "Average rating",
+      "support": "Support"
+    },
+    "story": {
+      "title": "Our story",
+      "description": "How we came to create a comfortable apartment rental service",
+      "content1": "It all started with a simple idea: to make short-term accommodation rental honest, transparent and truly comfortable. We ourselves traveled often and faced disappointment when reality did not match expectations.",
+      "content2": "In 2020, we decided to create a service that would solve these problems. We started with careful selection of apartments, honest photography and implementation of quality standards that guarantee an excellent experience for every guest.",
+      "content3": "Today Volshebno Tut is a team of professionals that continues to grow and develop, remaining true to its principles of quality and honesty."
+    },
+    "quote": {
+      "text": "We believe that every journey should start with a comfortable and safe place where you can feel at home.",
+      "author": "— Anastasia Bezborodova, founder of Volshebno Tut"
+    },
+    "values": {
+      "title": "Our values",
+      "description": "The principles that guide us in our work",
+      "care": {
+        "title": "Care for every guest",
+        "description": "We treat every guest like a close friend, providing a personal approach and attention to detail."
+      },
+      "honesty": {
+        "title": "Honesty and transparency",
+        "description": "All photos match reality. No hidden fees or unpleasant surprises."
+      },
+      "quality": {
+        "title": "Quality above all",
+        "description": "We carefully select each apartment and maintain high standards of cleanliness and comfort."
+      }
+    },
+    "services": {
+      "title": "Our services",
+      "subtitle": "Full range of services for comfortable stay",
+      "list": [
+        "Online booking",
+        "24/7 guest support",
+        "Professional cleaning",
+        "Quality control",
+        "Honest photos",
+        "Transparent pricing"
+      ]
+    }
   },
   "contacts": {
     "subtitle": "Contact us in a convenient way",
