@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { SEO } from "@/components/SEO";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { generateArticleData, generateBreadcrumbData } from "@/components/StructuredData";
 
 const About = () => {
   const { t } = useTranslation();
@@ -32,10 +35,32 @@ const About = () => {
     description: t('about.values.quality.description')
   }];
   return <div className="min-h-screen bg-background">
+      <SEO
+        title="О нас - Компания по аренде премиальных апартаментов"
+        description="Home Reserve Rentals - команда профессионалов с 2020 года. Более 2500 довольных гостей, рейтинг 4.9/5. Честность, качество и забота о каждом госте."
+        keywords="о компании, аренда апартаментов москва, история компании, честная аренда жилья"
+        type="article"
+        structuredData={[
+          generateArticleData({
+            title: "О компании Home Reserve Rentals",
+            description: "История создания сервиса премиальной аренды апартаментов в Москве",
+            datePublished: "2020-01-01",
+            dateModified: "2025-10-03",
+            image: "https://homereserve.ru/about-image.jpg"
+          }),
+          generateBreadcrumbData([
+            { name: "Главная", url: "https://homereserve.ru/" },
+            { name: "О нас", url: "https://homereserve.ru/about" }
+          ])
+        ]}
+      />
       <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs items={[{ label: t('about.title') }]} />
+        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground">

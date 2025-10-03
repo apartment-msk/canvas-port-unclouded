@@ -9,7 +9,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SearchWidget } from "@/components/SearchWidget";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
-import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData } from "@/components/StructuredData";
+import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData, generateApartmentData, generateBreadcrumbData } from "@/components/StructuredData";
+import { SEO } from "@/components/SEO";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-new-2.avifs";
@@ -98,6 +99,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Премиальные апартаменты для краткосрочной аренды в Москве"
+        description="Снимайте современные апартаменты в центре Москвы посуточно. Честные фотографии, прозрачные цены от 5500₽, круглосуточная поддержка. Рейтинг 4.9/5, более 2500 довольных гостей."
+        keywords="аренда квартир москва, апартаменты посуточно, снять квартиру на сутки москва, краткосрочная аренда, жилье в центре москвы"
+        structuredData={[
+          generateOrganizationData(),
+          generateWebSiteData(),
+          generateLocalBusinessData(),
+          generateBreadcrumbData([
+            { name: "Главная", url: "https://homereserve.ru/" }
+          ])
+        ]}
+      />
       <StructuredData data={generateOrganizationData()} />
       <StructuredData data={generateWebSiteData()} />
       <StructuredData data={generateLocalBusinessData()} />
@@ -110,12 +124,13 @@ const Index = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+        <img
+          src={heroImage}
+          alt="Современные премиальные апартаменты для краткосрочной аренды в центре Москвы"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">

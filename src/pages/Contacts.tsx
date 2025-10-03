@@ -3,6 +3,9 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SEO } from '@/components/SEO';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { generateLocalBusinessData, generateBreadcrumbData } from '@/components/StructuredData';
 
 const Contacts = () => {
   const { t } = useTranslation();
@@ -36,13 +39,26 @@ const Contacts = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Контакты - Связь с Home Reserve Rentals"
+        description="Свяжитесь с нами по телефону +7 (926) 547-55-57 или email info@homereserve.ru. Работаем ежедневно 9:00-21:00. Быстрая поддержка 24/7."
+        keywords="контакты, телефон аренда квартир, связаться с нами, поддержка клиентов"
+        structuredData={[
+          generateLocalBusinessData(),
+          generateBreadcrumbData([
+            { name: "Главная", url: "https://homereserve.ru/" },
+            { name: "Контакты", url: "https://homereserve.ru/contacts" }
+          ])
+        ]}
+      />
       <Header />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: t('navigation.contacts') }]} />
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {t('nav.contacts')}
+              {t('navigation.contacts')}
             </h1>
             <p className="text-muted-foreground text-lg">
               {t('contacts.subtitle')}
