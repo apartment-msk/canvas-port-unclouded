@@ -76,7 +76,8 @@ const Contacts = () => {
       icon: Phone,
       title: t('contact.phoneTitle'),
       details: [
-        { text: "+7 995 508 58 08", link: "tel:+79955085808" }
+        { text: "+7 995 508 58 08", link: "tel:+79955085808" },
+        { text: "с 8:00 до 23:00" }
       ],
       description: t('contact.phoneDescription')
     },
@@ -430,7 +431,7 @@ const Contacts = () => {
               >
                 <a href="tel:+79955085808">
                   <Phone className="h-5 w-5 mr-2" />
-                  {t('contact.call')}
+                  {t('contact.call')} (8:00-23:00)
                 </a>
               </Button>
               <Button
