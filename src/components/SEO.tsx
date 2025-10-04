@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 interface SEOProps {
   title: string;
@@ -19,7 +20,8 @@ export function SEO({
   type = 'website',
   structuredData = []
 }: SEOProps) {
-  const fullTitle = `${title} | Home Reserve Rentals`;
+  const { t } = useTranslation();
+  const fullTitle = `${title} | ${t('companyName')}`;
   const currentUrl = canonical || typeof window !== 'undefined' ? window.location.href : '';
 
   return (
