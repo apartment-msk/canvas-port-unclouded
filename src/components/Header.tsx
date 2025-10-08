@@ -14,7 +14,7 @@ export function Header() {
 
   const navigation = [
     { name: t('navigation.home'), href: "/", icon: Home },
-    { name: t('navigation.apartments'), href: "https://homereserve.ru/HYkUIAGFQD", icon: Building2, external: true },
+    { name: t('navigation.apartments'), href: "https://amazy-apart.ru/HYkUIAGFQD", icon: Building2, external: true },
     { name: t('navigation.about'), href: "/about", icon: Info },
     { name: t('navigation.contacts'), href: "/contacts", icon: Phone },
     { name: t('navigation.owners'), href: "/owners", icon: Users },

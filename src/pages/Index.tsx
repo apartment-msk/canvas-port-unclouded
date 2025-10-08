@@ -108,7 +108,7 @@ const Index = () => {
           generateWebSiteData(),
           generateLocalBusinessData(),
           generateBreadcrumbData([
-            { name: "Главная", url: "https://homereserve.ru/" }
+            { name: "Главная", url: "https://amazy-apart.ru/" }
           ])
         ]}
       />

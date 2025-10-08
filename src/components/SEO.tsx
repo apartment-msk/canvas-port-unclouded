@@ -16,7 +16,7 @@ export function SEO({
   description,
   keywords,
   canonical,
-  ogImage = 'https://homereserve.ru/og-image.jpg',
+  ogImage = 'https://amazy-apart.ru/og-image.jpg',
   type = 'website',
   structuredData = []
 }: SEOProps) {

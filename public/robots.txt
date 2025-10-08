@@ -22,4 +22,4 @@ Allow: /assets/
 Allow: /*.js
 Allow: /*.css
 
-Sitemap: https://homereserve.ru/sitemap.xml
+Sitemap: https://amazy-apart.ru/sitemap.xml

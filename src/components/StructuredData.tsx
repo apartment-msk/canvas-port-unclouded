@@ -28,9 +28,9 @@ export function generateOrganizationData() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Home Reserve Rentals",
-    "url": "https://homereserve.ru",
-    "logo": "https://homereserve.ru/logo.png",
+    "name": "Волшебно тут",
+    "url": "https://amazy-apart.ru",
+    "logo": "https://amazy-apart.ru/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+7-995-508-58-08",
@@ -48,11 +48,11 @@ export function generateWebSiteData() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Home Reserve Rentals",
-    "url": "https://homereserve.ru",
+    "name": "Волшебно тут",
+    "url": "https://amazy-apart.ru",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://homereserve.ru/apartments?search={search_term_string}",
+      "target": "https://amazy-apart.ru/apartments?search={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -62,10 +62,10 @@ export function generateLocalBusinessData() {
   return {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "name": "Home Reserve Rentals",
-    "image": "https://homereserve.ru/hero-image.jpg",
-    "@id": "https://homereserve.ru",
-    "url": "https://homereserve.ru",
+    "name": "Волшебно тут",
+    "image": "https://amazy-apart.ru/hero-image.jpg",
+    "@id": "https://amazy-apart.ru",
+    "url": "https://amazy-apart.ru",
     "telephone": "+7-995-508-58-08",
     "priceRange": "5500₽ - 12000₽",
     "address": {
@@ -121,7 +121,7 @@ export function generateApartmentData(apartment: {
       "price": apartment.price,
       "priceCurrency": "RUB",
       "availability": "https://schema.org/InStock",
-      "url": `https://homereserve.ru/apartments/${apartment.id}`
+      "url": `https://amazy-apart.ru/apartments/${apartment.id}`
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -167,14 +167,14 @@ export function generateArticleData(article: {
     "dateModified": article.dateModified,
     "author": {
       "@type": "Organization",
-      "name": "Home Reserve Rentals"
+      "name": "Волшебно тут"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Home Reserve Rentals",
+      "name": "Волшебно тут",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://homereserve.ru/logo.png"
+        "url": "https://amazy-apart.ru/logo.png"
       }
     }
   };
