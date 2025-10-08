@@ -1,8 +1,14 @@
 User-agent: Googlebot
 Allow: /
+Allow: /assets/
+Allow: /*.js
+Allow: /*.css
 
 User-agent: Bingbot
 Allow: /
+Allow: /assets/
+Allow: /*.js
+Allow: /*.css
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +18,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /*.js
+Allow: /*.css
+
+Sitemap: https://homereserve.ru/sitemap.xml
