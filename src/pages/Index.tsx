@@ -112,9 +112,6 @@ const Index = () => {
           ])
         ]}
       />
-      <StructuredData data={generateOrganizationData()} />
-      <StructuredData data={generateWebSiteData()} />
-      <StructuredData data={generateLocalBusinessData()} />
       <Header />
 
       {/* Hero Section with Booking */}
