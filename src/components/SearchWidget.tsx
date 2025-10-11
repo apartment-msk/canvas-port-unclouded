@@ -18,7 +18,7 @@ export function SearchWidget({ className }: SearchWidgetProps) {
     // Load the widget script
     const script = document.createElement('script');
     script.type = 'module';
-    script.src = 'https://amazy-apart.ru/widget.js';
+    script.src = 'https://homereserve.ru/widget.js';
     document.head.appendChild(script);
 
     // Initialize widget when script loads
