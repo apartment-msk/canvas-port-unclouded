@@ -104,7 +104,6 @@ const Index = () => {
         description="Снимайте современные апартаменты в центре Москвы посуточно. Честные фотографии, прозрачные цены от 5500₽, круглосуточная поддержка. Рейтинг 4.9/5, более 2500 довольных гостей."
         keywords="аренда квартир москва, апартаменты посуточно, снять квартиру на сутки москва, краткосрочная аренда, жилье в центре москвы"
         structuredData={[
-          generateOrganizationData(),
           generateWebSiteData(),
           generateLocalBusinessData(),
           generateBreadcrumbData([
