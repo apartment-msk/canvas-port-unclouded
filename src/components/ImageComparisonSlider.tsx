@@ -44,7 +44,7 @@ export const ImageComparisonSlider = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full select-none overflow-hidden rounded-2xl"
+      className="relative w-full select-none overflow-hidden rounded-2xl aspect-[4/3]"
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
@@ -52,24 +52,24 @@ export const ImageComparisonSlider = ({
       onTouchEnd={handleMouseUp}
     >
       {/* After Image (Right) */}
-      <div className="relative w-full">
+      <div className="absolute inset-0">
         <img
           src={afterImage}
           alt={afterAlt}
-          className="w-full h-auto block"
+          className="w-full h-full object-cover"
           draggable={false}
         />
       </div>
 
       {/* Before Image (Left) with clip */}
       <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden"
+        className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img
           src={beforeImage}
           alt={beforeAlt}
-          className="w-full h-auto block"
+          className="w-full h-full object-cover"
           draggable={false}
         />
       </div>
