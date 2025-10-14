@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ImageComparisonSlider } from "@/components/ImageComparisonSlider";
-import apartment1 from "@/assets/apartment-1.jpg";
-import apartment2 from "@/assets/apartment-2.jpg";
+import renovationBefore from "@/assets/renovation-before.jpg";
+import renovationAfter from "@/assets/renovation-after.jpg";
 
 const Owners = () => {
   const { t } = useTranslation();
@@ -33,6 +33,99 @@ const Owners = () => {
           </div>
         </div>
       </section>
+
+      {/* Renovation Services Section - Image Comparison */}
+      <motion.section
+        className="py-16 bg-gradient-warm"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold text-foreground"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                {t('owners.renovation.title')}
+              </motion.h2>
+              <motion.p
+                className="text-lg text-muted-foreground max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {t('owners.renovation.subtitle')}
+              </motion.p>
+            </div>
+
+            <motion.div
+              className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-floating"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <ImageComparisonSlider
+                beforeImage={renovationBefore}
+                afterImage={renovationAfter}
+                beforeAlt="До ремонта"
+                afterAlt="После ремонта"
+              />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              {(t('owners.renovation.services', { returnObjects: true }) as any[]).map((service: any, index: number) => {
+                const IconComponent = renovationIcons[index] || Wrench;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                  >
+                    <Card className="text-center border-0 shadow-card hover:shadow-floating transition-all hover:scale-105">
+                      <CardContent className="p-6">
+                        <div className="w-16 h-16 mx-auto mb-6 bg-gradient-luxury rounded-2xl flex items-center justify-center">
+                          <IconComponent className="h-8 w-8 text-luxury-foreground" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-foreground mb-4">
+                          {service.title}
+                        </h3>
+                        <p className="text-muted-foreground">
+                          {service.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            <div className="text-center pt-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Link to="/contacts">
+                  <Button size="lg" className="bg-gradient-luxury text-luxury-foreground hover:shadow-luxury hover:scale-105">
+                    {t('owners.renovation.button')}
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Problem Identification Section */}
       <motion.section
@@ -205,99 +298,6 @@ const Owners = () => {
                   <p className="text-foreground text-sm font-medium">{service}</p>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Renovation Services Section - Image Comparison */}
-      <motion.section
-        className="py-16 bg-gradient-warm"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold text-foreground"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                {t('owners.renovation.title')}
-              </motion.h2>
-              <motion.p
-                className="text-lg text-muted-foreground max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {t('owners.renovation.subtitle')}
-              </motion.p>
-            </div>
-
-            <motion.div
-              className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-floating"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <ImageComparisonSlider
-                beforeImage={apartment1}
-                afterImage={apartment2}
-                beforeAlt="До ремонта"
-                afterAlt="После ремонта"
-              />
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              {(t('owners.renovation.services', { returnObjects: true }) as any[]).map((service: any, index: number) => {
-                const IconComponent = renovationIcons[index] || Wrench;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                  >
-                    <Card className="text-center border-0 shadow-card hover:shadow-floating transition-all hover:scale-105">
-                      <CardContent className="p-6">
-                        <div className="w-16 h-16 mx-auto mb-6 bg-gradient-luxury rounded-2xl flex items-center justify-center">
-                          <IconComponent className="h-8 w-8 text-luxury-foreground" />
-                        </div>
-                        <h3 className="text-xl font-semibold text-foreground mb-4">
-                          {service.title}
-                        </h3>
-                        <p className="text-muted-foreground">
-                          {service.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <div className="text-center pt-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <Link to="/contacts">
-                  <Button size="lg" className="bg-gradient-luxury text-luxury-foreground hover:shadow-luxury hover:scale-105">
-                    {t('owners.renovation.button')}
-                  </Button>
-                </Link>
-              </motion.div>
             </div>
           </div>
         </div>
