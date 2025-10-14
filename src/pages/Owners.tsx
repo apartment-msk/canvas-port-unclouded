@@ -1,12 +1,14 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { RenovationSlider } from "@/components/RenovationSlider";
 import { Shield, Clock, Star, DollarSign, Home, Users, Wrench, Paintbrush } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import ReactCompareImage from "react-compare-image";
+import apartment1 from "@/assets/apartment-1.jpg";
+import apartment2 from "@/assets/apartment-2.jpg";
 
 const Owners = () => {
   const { t } = useTranslation();
@@ -208,7 +210,7 @@ const Owners = () => {
         </div>
       </motion.section>
 
-      {/* Renovation Services Section */}
+      {/* Renovation Services Section - Image Comparison */}
       <motion.section
         className="py-16 bg-gradient-warm"
         initial={{ opacity: 0, y: 50 }}
@@ -240,12 +242,20 @@ const Owners = () => {
             </div>
 
             <motion.div
+              className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-floating"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <RenovationSlider />
+              <ReactCompareImage
+                leftImage={apartment1}
+                rightImage={apartment2}
+                sliderLineColor="#D4AF37"
+                sliderLineWidth={4}
+                handleSize={40}
+                hover={true}
+              />
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
