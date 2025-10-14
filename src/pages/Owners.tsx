@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import ReactCompareImage from "react-compare-image";
+import { ImageComparisonSlider } from "@/components/ImageComparisonSlider";
 import apartment1 from "@/assets/apartment-1.jpg";
 import apartment2 from "@/assets/apartment-2.jpg";
 
@@ -248,13 +248,11 @@ const Owners = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <ReactCompareImage
-                leftImage={apartment1}
-                rightImage={apartment2}
-                sliderLineColor="#D4AF37"
-                sliderLineWidth={4}
-                handleSize={40}
-                hover={true}
+              <ImageComparisonSlider
+                beforeImage={apartment1}
+                afterImage={apartment2}
+                beforeAlt="До ремонта"
+                afterAlt="После ремонта"
               />
             </motion.div>
 
