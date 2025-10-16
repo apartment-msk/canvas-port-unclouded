@@ -327,41 +327,95 @@
     }
   },
   "owners": {
-    "title": "For Owners",
-    "subtitle": "Rent out your apartment with us and get stable income",
-    "benefits": {
-      "income": {
-        "title": "High Income",
-        "description": "We guarantee maximum occupancy and competitive prices for your property"
-      },
-      "protection": {
-        "title": "Property Protection",
-        "description": "Complete guest verification and damage insurance"
-      },
-      "guests": {
-        "title": "Verified Guests",
-        "description": "We work only with reliable clients with positive reviews"
-      },
-      "support": {
-        "title": "Full Support",
-        "description": "We take care of all management and maintenance issues"
+    "hero": {
+      "title": "Get More from Your Property",
+      "subtitle": "Professional short-term rental management. Increase profitability by 20-30% without your involvement.",
+      "cta": "Discuss Partnership"
+    },
+    "trustStats": {
+      "title": "Why Property Owners Trust Us",
+      "subtitle": "Facts and figures about our work since 2019",
+      "stats": {
+        "propertyValue": "million rubles - total value of property under management",
+        "occupancy": "occupancy rate of our properties",
+        "wearReduction": "less wear and tear than long-term rentals"
       }
     },
-    "ctaTitle": "Start earning today",
-    "ctaSubtitle": "Submit a request and we will contact you to discuss details",
-    "ctaButton": "Submit Request",
-    "howItWorks": "How It Works",
-    "step1": {
-      "title": "Application",
-      "description": "Submit an application through the form or call us"
+    "problems": {
+      "title": "Familiar Problems?",
+      "subtitle": "If you recognize yourself in any of these points - we can solve your problems",
+      "list": [
+        "Renting long-term and earning less money",
+        "Realizing that property could generate higher income",
+        "Unable to control apartment condition",
+        "Frequently repairing and replacing broken appliances",
+        "Reluctant to spend on advertising or don't know how to set it up",
+        "Listening to neighbors' complaints about tenants",
+        "Tenants delaying payments",
+        "Want to recover property investment faster",
+        "Don't like receiving client calls at any time",
+        "Located in another city while property is in Moscow"
+      ]
     },
-    "step2": {
-      "title": "Assessment",
-      "description": "We evaluate your apartment and discuss terms"
+    "services": {
+      "title": "Full Range of Services",
+      "subtitle": "Everything needed for effective property management",
+      "list": [
+        "Property evaluation",
+        "Renovation and cleaning",
+        "Home staging",
+        "Legal consultation",
+        "Insurance",
+        "Financial statistics",
+        "Content preparation",
+        "Client profiling",
+        "Comprehensive marketing",
+        "Price monitoring",
+        "24/7 operations support",
+        "Laundry services"
+      ]
     },
-    "step3": {
-      "title": "Start Working",
-      "description": "We post the listing and start accepting guests"
+    "renovation": {
+      "title": "We Prepare Properties from Scratch",
+      "subtitle": "Even if you have bare walls or need major renovation - we'll handle the entire process of preparing premium apartments for short-term rental",
+      "button": "Get Preparation Cost Estimate",
+      "services": [
+        {
+          "title": "Work with Any Condition",
+          "description": "From bare walls to major renovation - we'll prepare your property turnkey"
+        },
+        {
+          "title": "Full Preparation Cycle",
+          "description": "Design, renovation, furnishing, and rental launch in 60-90 days"
+        },
+        {
+          "title": "Investment Payback",
+          "description": "Preparation costs pay back in 18-24 months through premium rentals"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Simple partnership process",
+      "steps": [
+        {
+          "title": "Property Assessment",
+          "description": "Our specialist will conduct a free profitability assessment of your property"
+        },
+        {
+          "title": "Rental Preparation",
+          "description": "If needed, we'll help with renovation, furnishing, and staging"
+        },
+        {
+          "title": "Management and Income",
+          "description": "We handle all management concerns while you receive stable income"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Become a Partner?",
+      "subtitle": "Let's discuss your property's potential and calculate projected profitability",
+      "button": "Discuss Partnership"
     }
   },
   "footer": {
