@@ -14,9 +14,15 @@
     "description": "在我们精心挑选的公寓中发现舒适和风格的世界。真实照片，透明价格，24/7支持。",
     "findApartments": "寻找公寓"
   },
+  "homepage": {
+    "achievements": {
+      "title": "我们的成就和评分",
+      "subtitle": "我们为客人的信任和领先平台上的高评分感到自豪"
+    }
+  },
   "services": {
     "title": "我们的服务",
-    "subtitle": "为每位客人提供个性化服务，长期入住享有特殊优惠"
+    "subtitle": "为每位客人提供个性化服务和长期住宿的特殊条件"
   },
   "features": {
     "title": "为什么选择我们",

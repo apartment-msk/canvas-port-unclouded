@@ -217,10 +217,10 @@ const Index = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Наши достижения и рейтинги
+                {t('homepage.achievements.title')}
               </h2>
               <p className="text-muted-foreground">
-                Мы гордимся доверием наших гостей и высокими оценками на ведущих платформах
+                {t('homepage.achievements.subtitle')}
               </p>
             </motion.div>
 
@@ -631,10 +631,10 @@ const Index = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Наши услуги
+              {t('services.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Индивидуальный подход к каждому гостю и специальные условия для долгосрочного проживания
+              {t('services.subtitle')}
             </p>
           </motion.div>
 

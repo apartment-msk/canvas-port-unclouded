@@ -14,6 +14,12 @@
     "description": "Discover a world of comfort and style in our carefully selected apartments. Honest photos, transparent prices, 24/7 support.",
     "findApartments": "Find Apartments"
   },
+  "homepage": {
+    "achievements": {
+      "title": "Our Achievements and Ratings",
+      "subtitle": "We take pride in our guests' trust and high ratings on leading platforms"
+    }
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "Individual approach to each guest and special conditions for long-term stays"
