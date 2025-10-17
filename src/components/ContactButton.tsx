@@ -21,13 +21,13 @@ export const ContactButton = () => {
     {
       icon: Phone,
       label: t('contactButton.callUs'),
-      href: 'tel:+79150000000',
+      href: 'tel:+79955085808',
       color: 'text-blue-500',
     },
     {
       icon: MessageCircle,
       label: t('contactButton.whatsapp'),
-      href: 'https://wa.me/79150000000',
+      href: 'https://wa.me/79955085808',
       color: 'text-green-500',
     },
     {
