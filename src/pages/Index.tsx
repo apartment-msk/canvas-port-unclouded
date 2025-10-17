@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SearchWidget } from "@/components/SearchWidget";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
+import { ContactButton } from "@/components/ContactButton";
 import { StructuredData, generateOrganizationData, generateWebSiteData, generateLocalBusinessData, generateApartmentData, generateBreadcrumbData } from "@/components/StructuredData";
 import { SEO } from "@/components/SEO";
 import { useTranslation } from "react-i18next";
@@ -762,6 +763,7 @@ const Index = () => {
       </motion.section>
 
       <Footer />
+      <ContactButton />
     </div>
   );
 };

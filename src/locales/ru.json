@@ -453,5 +453,12 @@
     "title": "Страница не найдена",
     "description": "К сожалению, страница, которую вы ищете, не существует или была перемещена.",
     "backHome": "Вернуться на главную"
+  },
+  "contactButton": {
+    "title": "Связаться с нами",
+    "callUs": "Позвонить",
+    "writeEmail": "Написать email",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp"
   }
 }
