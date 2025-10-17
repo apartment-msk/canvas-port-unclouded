@@ -33,7 +33,7 @@ export const ContactButton = () => {
     {
       icon: MessageCircle,
       label: t('contactButton.telegram'),
-      href: 'https://t.me/volshebno_tut',
+      href: 'https://t.me/Volshebno_tyt',
       color: 'text-blue-400',
     },
     {
