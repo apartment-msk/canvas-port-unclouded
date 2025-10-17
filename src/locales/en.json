@@ -22,7 +22,27 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Individual approach to each guest and special conditions for long-term stays"
+    "subtitle": "Individual approach to each guest and special conditions for long-term stays",
+    "corporate": {
+      "title": "Business Trips and Corporate Accommodation",
+      "description": "We work with business travelers and corporate clients. We provide all necessary documents for reporting, flexible payment terms, and a personal manager for regular clients.",
+      "features": {
+        "documents": "Reporting Documents",
+        "manager": "Personal Manager",
+        "payment": "Flexible Payment Terms",
+        "discounts": "Corporate Discounts"
+      }
+    },
+    "cleaning": {
+      "title": "Free Cleaning for Long-term Stays",
+      "description": "For bookings of 7 days or more, we provide free cleaning. Regular linen changes and apartment maintenance for your maximum comfort.",
+      "features": {
+        "weekly": "Weekly Cleaning",
+        "linen": "Linen Change",
+        "supplies": "Supplies Replenishment",
+        "schedule": "Flexible Schedule"
+      }
+    }
   },
   "features": {
     "title": "Why Choose Us",

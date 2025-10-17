@@ -654,29 +654,27 @@ const Index = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Командировки и корпоративное размещение
+                    {t('services.corporate.title')}
                   </h3>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    Работаем с командировочными и корпоративными клиентами.
-                    Предоставляем все необходимые документы для отчетности,
-                    индивидуальные условия оплаты и персональный менеджер для постоянных клиентов.
+                    {t('services.corporate.description')}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Отчетные документы</span>
+                      <span className="text-sm text-muted-foreground">{t('services.corporate.features.documents')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Персональный менеджер</span>
+                      <span className="text-sm text-muted-foreground">{t('services.corporate.features.manager')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Гибкие условия оплаты</span>
+                      <span className="text-sm text-muted-foreground">{t('services.corporate.features.payment')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Корпоративные скидки</span>
+                      <span className="text-sm text-muted-foreground">{t('services.corporate.features.discounts')}</span>
                     </div>
                   </div>
                 </div>
@@ -698,29 +696,27 @@ const Index = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Бесплатная уборка при долгосрочном проживании
+                    {t('services.cleaning.title')}
                   </h3>
                   <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    При бронировании от 7 суток предоставляем бесплатную уборку.
-                    Регулярная смена белья и поддержание чистоты в апартаментах
-                    для вашего максимального комфорта.
+                    {t('services.cleaning.description')}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Еженедельная уборка</span>
+                      <span className="text-sm text-muted-foreground">{t('services.cleaning.features.weekly')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Смена белья</span>
+                      <span className="text-sm text-muted-foreground">{t('services.cleaning.features.linen')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Пополнение принадлежностей</span>
+                      <span className="text-sm text-muted-foreground">{t('services.cleaning.features.supplies')}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-luxury rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">Гибкий график</span>
+                      <span className="text-sm text-muted-foreground">{t('services.cleaning.features.schedule')}</span>
                     </div>
                   </div>
                 </div>

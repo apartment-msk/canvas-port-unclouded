@@ -22,7 +22,27 @@
   },
   "services": {
     "title": "我们的服务",
-    "subtitle": "为每位客人提供个性化服务和长期住宿的特殊条件"
+    "subtitle": "为每位客人提供个性化服务和长期住宿的特殊条件",
+    "corporate": {
+      "title": "商务出差和企业住宿",
+      "description": "我们与商务旅客和企业客户合作。我们提供报告所需的所有文件，灵活的付款条件，以及为常客提供专属经理。",
+      "features": {
+        "documents": "报告文件",
+        "manager": "专属经理",
+        "payment": "灵活的付款条件",
+        "discounts": "企业折扣"
+      }
+    },
+    "cleaning": {
+      "title": "长期住宿免费清洁",
+      "description": "预订7天或以上，我们提供免费清洁。定期更换床单并保持公寓清洁，为您提供最大舒适度。",
+      "features": {
+        "weekly": "每周清洁",
+        "linen": "更换床单",
+        "supplies": "补充用品",
+        "schedule": "灵活时间安排"
+      }
+    }
   },
   "features": {
     "title": "为什么选择我们",
