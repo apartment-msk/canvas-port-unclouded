@@ -99,16 +99,39 @@ export const ContactButton = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50"
+            className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50 flex items-center gap-4"
           >
-            <Button
+            {/* Optional text label - appears on desktop */}
+            {!isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+                className="hidden md:block bg-gradient-to-r from-green-400 via-green-500 to-emerald-600 
+                  text-white px-4 py-2 rounded-lg shadow-lg whitespace-nowrap font-medium"
+              >
+                {t('contactButton.title')}!
+              </motion.div>
+            )}
+            
+            <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              size="lg"
-              className="rounded-full h-14 w-14 md:h-16 md:w-16 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse hover:animate-none"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative rounded-full h-16 w-16 md:h-20 md:w-20 
+                bg-gradient-to-r from-green-400 via-green-500 to-emerald-600
+                shadow-2xl hover:shadow-green-500/50
+                transition-all duration-300 
+                flex items-center justify-center
+                before:absolute before:inset-0 before:rounded-full 
+                before:bg-green-400/50 before:animate-ping
+                animate-bounce hover:animate-none
+                after:animate-none"
               aria-label={t('contactButton.title')}
             >
-              <MessageCircle className="w-6 h-6 md:w-7 md:h-7" />
-            </Button>
+              <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
+            </motion.button>
           </motion.div>
         </>
       )}
