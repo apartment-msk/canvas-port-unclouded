@@ -56,7 +56,7 @@ export const ContactButton = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="fixed right-4 bottom-24 md:right-6 md:bottom-28 z-50 bg-background border border-border rounded-lg shadow-lg p-4 w-64"
+                className="fixed right-4 bottom-40 md:right-6 md:bottom-28 z-[100] bg-background border border-border rounded-lg shadow-lg p-4 w-64"
               >
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-foreground">
@@ -99,7 +99,7 @@ export const ContactButton = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            className="fixed right-4 bottom-4 md:right-6 md:bottom-6 z-50 flex items-center gap-4"
+            className="fixed right-4 bottom-20 md:right-6 md:bottom-6 z-[100] flex items-center gap-4"
           >
             {/* Optional text label - appears on desktop */}
             {!isMenuOpen && (
@@ -119,15 +119,24 @@ export const ContactButton = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                y: {
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                  ease: "easeInOut"
+                }
+              }}
               className="relative rounded-full h-16 w-16 md:h-20 md:w-20 
                 bg-gradient-to-r from-green-400 via-green-500 to-emerald-600
                 shadow-2xl hover:shadow-green-500/50
                 transition-all duration-300 
                 flex items-center justify-center
                 before:absolute before:inset-0 before:rounded-full 
-                before:bg-green-400/50 before:animate-ping
-                animate-bounce hover:animate-none
-                after:animate-none"
+                before:bg-green-400/50 before:animate-ping"
               aria-label={t('contactButton.title')}
             >
               <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
