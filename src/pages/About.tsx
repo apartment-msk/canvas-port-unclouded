@@ -98,28 +98,33 @@ const About = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Values */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                {t('about.services.title')}
+                {t('about.values.title')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                {t('about.services.subtitle')}
+                {t('about.values.description')}
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {(t('about.services.list', { returnObjects: true }) as string[]).map((service: string, index: number) => (
-                <div key={index} className="text-center space-y-2">
-                  <div className="w-12 h-12 mx-auto bg-gradient-luxury rounded-xl flex items-center justify-center">
-                    <span className="text-luxury-foreground font-bold">{index + 1}</span>
-                  </div>
-                  <p className="text-foreground text-sm font-medium">{service}</p>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {values.map((value, index) => <Card key={index} className="text-center border-0 shadow-card hover:shadow-floating transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-luxury rounded-2xl flex items-center justify-center">
+                      <value.icon className="h-8 w-8 text-luxury-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>)}
             </div>
           </div>
         </div>
@@ -166,37 +171,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 bg-surface">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                {t('about.values.title')}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {t('about.values.description')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {values.map((value, index) => <Card key={index} className="text-center border-0 shadow-card hover:shadow-floating transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-luxury rounded-2xl flex items-center justify-center">
-                      <value.icon className="h-8 w-8 text-luxury-foreground" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {value.description}
-                    </p>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>;
