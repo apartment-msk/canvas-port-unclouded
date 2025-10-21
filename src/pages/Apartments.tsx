@@ -30,9 +30,6 @@ const Apartments = () => {
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
             {t('navigation.apartments')}
           </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl">
-            {t('featuredApartments.subtitle')}
-          </p>
         </div>
 
         <ListWidget className="w-full" />
